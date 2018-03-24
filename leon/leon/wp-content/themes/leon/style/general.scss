@@ -80,6 +80,62 @@ body{
 	}
 }
 
+@mixin highlightAnimation($parent, $child, $height) {
+	#{$parent} {
+		&:hover {
+			#{$child} {
+				color: #fff;
+
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+
+		#{$child} {
+			&:after {
+				content: '';
+		        display: block;
+		        border-bottom: 3px solid $red;
+		        height: $height;
+		        width: 0%;
+		        position: absolute;
+		        left: 50%;
+		        transform: translateX(-50%);
+		        top: 0px;
+		        transition: all 0.2s ease-in-out;
+				z-index: -1;
+			}
+		}
+	}
+}
+
+@mixin highlighter($selector, $height, $zindex) {
+	#{$selector}:hover {
+		color: #fff;
+
+			&:after {
+				width: 100%;
+			}
+	}
+
+	#{$selector} {
+		&:after {
+			content: '';
+			display: block;
+			border-bottom: 3px solid $red;
+			height: $height;
+			width: 0%;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 0px;
+			transition: all 0.2s ease-in-out;
+			z-index: $zindex;
+		}
+	}
+}
+
 @function rf-spacing($multiplier) {
 	@return 10px * $multiplier
 };
@@ -105,4 +161,8 @@ body{
 	&.none {
 		display: none;
 	}
+}
+
+.rf-logo-secondary {
+	display: none;
 }
