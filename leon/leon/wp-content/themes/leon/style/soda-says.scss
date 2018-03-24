@@ -1,0 +1,65 @@
+.rf-says__category {
+    background-color: $blue;
+    padding: rf-spacing(0.5) rf-spacing(1);
+    width: max-content;
+    margin-top: rf-spacing(-2.7);
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-family: $rf-sans;
+        font-size: $tiny;
+    }
+}
+
+.rf-home__product-image {
+    .rf-says__overview & {
+        @include mq($from: desktop) {
+            height: 200px !important;
+            overflow: hidden;
+        }
+    }
+    .category-meet-our-makers & {
+        @include mq($from: desktop) {
+            height: 398px !important;
+        }
+
+        @include mq($from: wide) {
+            height: 373px !important;
+        }
+    }
+}
+.rf-home__product-details {
+    padding-top: 1px;
+
+    .rf-says__overview & {
+
+        @include mq($from: desktop) {
+            min-height: 187px !important;
+        }
+        @include mq($from: wide) {
+            min-height: 162px !important;
+        }
+    }
+
+    .category-meet-our-makers & {
+        background-color: rgba(0,0,0,0.5);
+        position: absolute !important;
+        bottom: 0px !important;
+        height: auto !important;
+        color: white;
+    }
+}
+
+.rf-home__product-title {
+    .rf-says__overview & {
+        h1 {
+            font-family: $rf-sans;
+        }
+    }
+    .category-ask-tamar & {
+        h1 {
+            color: $red;
+        }
+    }
+}

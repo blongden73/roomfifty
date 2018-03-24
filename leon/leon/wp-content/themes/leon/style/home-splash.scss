@@ -1,0 +1,191 @@
+.rf-splash {
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+
+    @include mq($from: desktop) {
+        background-color: #ffffff;
+    }
+}
+
+.rf-splash__wrapper {
+    position: relative;
+    visibility: none;
+    opacity: 0;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+}
+
+.rf-splash__image {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -160px;
+
+    @include mq($from: desktop) {
+        background-position: center !important;
+        width: 100%;
+        right: 0px;
+    }
+}
+
+.rf-titles {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    z-index: 20;
+    opacity: 0;
+
+    @include mq($from: desktop) {
+        width: 720px;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+    }
+
+    &.rf-three-sizes {
+        width: 90%;
+
+        @include mq($from: desktop) {
+            width: 800px;
+        }
+    }
+}
+
+.rf-splash__text {
+    color: black;
+    z-index: 1;
+    position: absolute;
+    top: rf-spacing(5);
+    left: rf-spacing(1);
+    font-size: 26px;
+    line-height: 30px;
+    font-family: $rf-sans;
+    width: 90%;
+    text-align: center;
+
+
+    @include mq($from: mobileMedium){
+        font-size: calc(#{$large + 6});
+        line-height: calc(#{$large + 6});
+    }
+
+    @include mq($from: desktop) {
+        top: 40vh !important;
+        width: 100%;
+        font-size: calc(#{$massive + 4});
+        line-height: calc(#{$massive + 4});
+    }
+
+    .rf-splash__text-wrapper {
+
+        @include mq($from: desktop) {
+            background-color: transparent;
+        }
+
+        span {
+            position: relative;
+            display: inline-block;
+
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('http://soda.shop/wp-content/uploads/2017/08/strike-through-1.png');
+                background-position: center;
+                height: 50px;
+                width: 100%;
+                top: -6px;
+
+                @include mq($from: mobileMedium){
+                    top: -2px;
+                }
+            }
+        }
+        @include mq($from: desktop) {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p {
+            color: white;
+            font-size: $small;
+            font-family: $rf-sans;
+            line-height: $small + 4px;
+            margin-top: rf-spacing(2);
+
+            &:before {
+                display: block;
+                content: '';
+                width: 100px;
+                height: 2px;
+                background-color: $red;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: rf-spacing(2);
+            }
+        }
+    }
+}
+.rf-promotion-banner {
+    background-color: $yellow;
+    width: 100%;
+    height: 52px;
+    padding-top: rf-spacing(0.5);
+    position: absolute;
+    bottom: 0px;
+    font-family: $rf-sans;
+    color: #333;
+    font-size: calc(#{$medium} + 2px);
+
+    .rf-wrapper {
+        height: 52px;
+    }
+
+    &.rf-promotion-banner-Hidden {
+        display: none;
+    }
+
+    &.rf-promotion-banner-Visible {
+        display: block;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        position: absolute;
+        z-index: 10;
+    }
+
+    span {
+        max-width: 300px;
+    }
+
+    .rf-promotion-banner--text {
+        display: block;
+        font-weight: 900;
+        color: $red;
+    }
+}

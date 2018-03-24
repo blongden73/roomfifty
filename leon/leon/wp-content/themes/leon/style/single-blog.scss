@@ -1,0 +1,152 @@
+.rf-single-blog__image {
+    height: 462px;
+    width: 100%;
+
+    @include mq($from: desktop) {
+        width: 780px;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.rf-single-blog__article {
+    margin-top: rf-spacing(1);
+
+    .rf-single-blog__drop-icon {
+        display: inline-block;
+        height: rf-spacing(8);
+        width: rf-spacing(8);
+        float: left;
+        margin-right: rf-spacing(1);
+        margin-bottom: rf-spacing(0.5);
+
+        svg, img {
+            margin-left: -2px;
+            margin-top: 3px;
+            height: 85px;
+            width: auto;
+        }
+    }
+    h1 {
+        font-family: $rf-sans;
+        font-size: $large;
+        color: $red;
+        margin-bottom: rf-spacing(1);
+    }
+    p {
+        font-family: $rf-sans;
+        font-size: $small;
+        line-height: $small + 4px;
+        margin-bottom: rf-spacing(1);
+
+        @include mq($from: desktop) {
+            margin-bottom: rf-spacing(2);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+
+        @include mq($from: desktop) {
+            width: 100%;
+        }
+    }
+
+    a {
+        color: $red;
+        text-decoration: none;
+        border-bottom: 1px solid $red;
+        transition: all 0.4s ease-in-out;
+        padding-left: 2px;
+        padding-right: 2px;
+        position: relative;
+        z-index: 2;
+    }
+
+    @include highlighter('a', 18px, -1);
+
+    blockquote {
+        p {
+            font-family: $rf-sans;
+            color: $red;
+            margin-bottom: rf-spacing(2);
+            width: 75%;
+            font-size: $medium;
+            line-height: $medium + 4px;
+
+            &:before {
+                content: '';
+                display: block;
+                float: left;
+                width: 50px;
+                height: 50px;
+                margin-top: rf-spacing(0.5);
+                margin-right: rf-spacing(1);
+                background-image: url('http://localhost:8888/wp-content/uploads/2017/08/quote-1.png');
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+
+        }
+    }
+
+    ul {
+        list-style: circle;
+        font-family: $rf-sans;
+        color: $red;
+        font-size: $small;
+        margin-left: 17px;
+
+        li {
+            margin-bottom: rf-spacing(0.5);
+        }
+    }
+
+    @include mq($from: desktop) {
+        width: 600px;
+        margin-left: 230px;
+        margin-left: 130px;
+    }
+}
+
+.rf-single__content-wrapper {
+    margin-bottom: rf-spacing(6);
+
+     & > * {
+         font-family: $rf-sans;
+         font-size: $small;
+         line-height: $small + 4px;
+         margin-bottom: rf-spacing(1);
+
+         @include mq($from: desktop) {
+             margin-bottom: rf-spacing(2);
+         }
+     }
+}
+
+.rf-single-blog__meta {
+    margin-bottom: rf-spacing(2);
+    margin-top: rf-spacing(1);
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+    padding-bottom: rf-spacing(1);
+    padding-top: rf-spacing(1);
+    font-size: $small - 2px;
+    font-family: $rf-sans;
+    line-height: $small;
+
+    ul {
+        list-style: none;
+        margin-left: 0px;
+    }
+}
+
+.rf-single-blog__time {
+    color: $blue;
+}

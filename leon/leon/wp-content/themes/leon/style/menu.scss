@@ -1,0 +1,46 @@
+.rf-pop-menu {
+    ul {
+        margin-left: rf-spacing(0);
+        margin-bottom: rf-spacing(2);
+
+        li {
+            font-family: $rf-sans;
+            font-size: $medium;
+            text-align: left;
+            margin-bottom: rf-spacing(0.4);
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+    .menu-primary-menu-container {
+        margin-top: rf-spacing(8);
+        border-bottom: dashed 2px #fff;
+        padding-bottom: rf-spacing(2);
+        margin-bottom: rf-spacing(1);
+
+        ul {
+            li {
+                border-top: 3px solid white;
+                font-family: $rf-sans;
+                font-size: $large;
+                text-align: left;
+                padding-top: rf-spacing(0.1);
+                padding-bottom: rf-spacing(0.1);
+                color: #FCD62B;
+
+                @include mq($from: mobileMedium) {
+                    padding-top: rf-spacing(1);
+                    padding-bottom: rf-spacing(1);
+                }
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

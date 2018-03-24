@@ -1,0 +1,251 @@
+.rf-sign-up, .rf-says, .rf-about {
+    width: 100%;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    background-color: $yellow;
+    text-align: center;
+    margin-bottom: rf-spacing(1);
+    position: relative;
+    z-index: 5;
+
+    @include mq($from: desktop) {
+        height: auto;
+        padding-top: rf-spacing(6);
+        padding-bottom: rf-spacing(6);
+        width: 40%;
+    }
+}
+
+.rf-says {
+    background-color: $green;
+    z-index: 0;
+
+    @include mq($from: desktop) {
+        width: 100%;
+        margin-top: rf-spacing(-6);
+        margin-bottom: rf-spacing(-12);
+        padding-top: 0px;
+    }
+
+    .rf-home__shapes {
+        right: -50px;
+        left: auto;
+    }
+}
+
+.rf-says__headline, .rf-about__headline {
+    font-size: $large;
+    color: $red;
+    font-family: $rf-sans;
+    width: rf-spacing(30);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rf-says__excerpt, .rf-about__excerpt {
+    font-size: $small;
+    font-family: $rf-sans;
+    width: rf-spacing(30);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: rf-spacing(1);
+}
+
+.rf-says__image {
+    height: rf-spacing(15);
+    width: rf-spacing(15);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: rf-spacing(1);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.rf-says__background-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    display: none;
+
+    @include mq($from: desktop) {
+        display: block;
+    }
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.rf-says__content-wrapper {
+    @include mq($from: desktop) {
+        width: 980px;
+        position: relative;
+        z-index: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include mq($from: wide) {
+        width: 1300px;
+    }
+}
+
+.rf-says__container {
+    @include mq($from: desktop) {
+        width: 40%;
+        padding-top: rf-spacing(6);
+        padding-bottom: rf-spacing(6);
+        background-color: $green;
+        transform: translateY(rf-spacing(-6));
+    }
+}
+
+.rf-says__link {
+    font-family: $rf-sans;
+    text-transform: uppercase;
+    color: $red;
+    font-size: $medium;
+    margin-top: rf-spacing(2);
+    position: relative;
+    width: rf-spacing(12);
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid $red;
+    padding-top: rf-spacing(0.5);
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+@include highlightAnimation('.rf-says__container', '.rf-says__link', 20px);
+
+.rf-about__image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: rf-spacing(15);
+    width: rf-spacing(15);
+    margin-bottom: rf-spacing(1);
+}
+
+
+.rf-about {
+    background-color: $blue;
+    right: 0px;
+
+    @include mq($from: desktop) {
+        margin-left: auto;
+    }
+
+    .rf-home__shapes {
+        left: -70px;
+    }
+}
+
+.rf-about__headline {
+    color: #fff;
+}
+
+.rf-about__excerpt {
+    color: #fff;
+}
+
+.rf-about__link {
+    font-family: $rf-sans;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: $medium;
+    margin-top: rf-spacing(2);
+    position: relative;
+    width: rf-spacing(25);
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #fff;
+    padding-top: rf-spacing(0.5);
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+}
+
+@include highlightAnimation('.rf-about', '.rf-about__link', 20px);
+
+
+.rf-sign-up {
+    @include mq($from: desktop) {
+        margin-left: auto;
+    }
+
+    h1 {
+        font-family: $rf-sans;
+        font-size: $large;
+    }
+
+    p {
+        font-family: $rf-sans;
+        font-size: $small;
+        line-height: $small + 4px;
+        width: rf-spacing(30);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: rf-spacing(1);
+        margin-bottom: rf-spacing(1);
+    }
+
+    input {
+        width: rf-spacing(11);
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: rf-spacing(1);
+        padding: rf-spacing(1);
+        background-color: transparent;
+        border: 1px solid black;
+        font-family: $rf-sans;
+        font-size: $tiny;
+        text-align: center;
+
+        &:hover {
+            background-color: $blue;
+            color: white;
+        }
+
+        &.email {
+            width: rf-spacing(27);
+
+            &:hover {
+                background-color: transparent;
+                color: black;
+            }
+        }
+
+        &::-webkit-input-placeholder { /* Chrome */
+            color: black;
+        }
+    }
+
+    button {
+        background-color: transparent;
+        border: 1px solid black;
+        padding: rf-spacing(1);
+        font-family: $rf-sans;
+        font-size: $tiny;
+    }
+
+    .rf-home__shapes {
+        left: -80px;
+    }
+}

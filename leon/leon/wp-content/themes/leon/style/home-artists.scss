@@ -1,0 +1,50 @@
+.rf-artists__wrapper {
+    background-color: #ffffff;
+    margin-top: rf-spacing(3);
+    padding-top: rf-spacing(2);
+    padding-bottom: rf-spacing(2);
+    overflow: auto;
+
+    @include mq($from:desktop) {
+        padding-bottom: rf-spacing(4);
+        padding-top: rf-spacing(4);
+    }
+
+    .rf-wrapper {
+        position: static;
+    }
+
+    h1 {
+        font-size: $medium;
+        color: $blue;
+        font-family: $rf-sans;
+        margin-bottom: rf-spacing(1);
+
+        @include mq($from: desktop) {
+            float: left;
+            max-width: 255px;
+            margin-right: rf-spacing(2);
+        }
+    }
+    ul {
+        font-size: $medium;
+        font-family: $rf-sans;
+        color: #333;
+        text-decoration: none;
+        column-count: 2;
+
+        @include mq($from: desktop) {
+            float: left;
+            column-count: 3;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

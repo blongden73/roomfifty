@@ -1,0 +1,191 @@
+.rf-process__wrapper {
+    @include mq($from: desktop) {
+        width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.rf-process-box__wrapper {
+    &:nth-child(1) {
+        .rf-process-box {
+            margin-top: 10px;
+            height: auto;
+
+            @include mq($from: desktop){
+                height: 420px;
+                margin-top: 0;
+            }
+
+            @include mq($from: desktop){
+                margin-top: rf-spacing(-9);
+            }
+        }
+    }
+    &:nth-child(2) {
+        .rf-process-box {
+            background-color: $yellow;
+            height: 380px;
+
+            @include mq($from: desktop){
+                height: 420px;
+            }
+        }
+    }
+    &:nth-child(3) {
+        .rf-process-box {
+            background-color: $blue;
+            height: auto;
+
+            @include mq($from: desktop){
+                height: 420px;
+            }
+        }
+    }
+}
+
+.rf-process-box {
+    width: auto;
+    padding: rf-spacing(1);
+    background-color: $red;
+    font-family: $rf-sans;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: rf-spacing(2);
+
+    @include mq($from: desktop){
+        width: 420px;
+        height: 420px;
+        margin-top: -150px;
+        margin-bottom: 0px;
+    }
+
+    &.right {
+        margin-left: auto;
+    }
+
+    .rf-number {
+        font-size: $massive;
+
+        @include mq($from: desktop) {
+            font-size: 112px;
+            margin-top: -20px;
+        }
+    }
+
+    h1 {
+        @include mq($from: desktop) {
+            margin-top: -38px;
+        }
+    }
+
+    p {
+        color: white;
+    }
+
+    .rf-process__cta {
+        color: $yellow;
+    }
+
+    h1,p {
+        font-size: $medium + 8px;
+        width: 100%;
+
+        @include mq($from: desktop){
+            width: 300px;
+            margin-left: 70px;
+        }
+    }
+
+    .rf-process__cta {
+        font-size: $medium + 8px;
+
+        @include mq($from: desktop) {
+            margin-left: 70px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &:hover {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .rf-proccess__image {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 260px;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.rf-about-box {
+    background-color: $darkBlue;
+    padding: 20px;
+    padding-bottom: 30px;
+    position: relative;
+    margin-top: 0px;
+
+    @include mq($from: desktop) {
+        margin-top: -80px;
+    }
+
+    .rf-about__logo {
+        transform: rotate(90deg);
+        float: left;
+        transform: rotate(-90deg);
+        margin-top: 20px;
+        margin-left: -20px;
+        margin-bottom: 100px;
+        width: 110px;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        @include mq($from: desktop){
+            margin-bottom: 0px;
+        }
+    }
+
+    .rf-about__sub {
+        color: #ffffff;
+        font-family: $rf-sans;
+        font-size: $small;
+        margin-left: auto;
+        width: 100%;
+        @include mq($from: desktop) {
+            width: 420px;
+        }
+    }
+    .rf-about__text {
+        color: #ffffff;
+        font-family: $rf-sans;
+        font-size: $small;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: 20px;
+        width: 100%;
+
+        @include mq($from: desktop) {
+            width: 400px;
+        }
+
+        a {
+            color: $yellow;
+            margin-top: 10px;
+        }
+    }
+}

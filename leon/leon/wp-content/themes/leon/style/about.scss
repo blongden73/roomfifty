@@ -1,0 +1,126 @@
+.rf-about__wrapper {
+    padding-top: 80px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.rf-about__intro-wrapper, .rf-about__box-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.rf-about__intro-wrapper {
+    margin-bottom: 0px;
+
+    @include mq($from: desktop){
+        margin-bottom: -220px;
+    }
+}
+
+.rf-about__intro {
+    font-size: $large;
+    font-family: $rf-sans;
+    color: #333;
+    float: left;
+    padding-top: 20px;
+    max-width: 500px;
+    margin-bottom: 20px;
+
+    @include mq($from: desktop) {
+        max-width: 290px;
+        font-size: $large + 10px;
+        padding-top: 50px;
+    }
+    @include mq($from: wide) {
+        max-width: 500px;
+    }
+}
+
+.rf-about__box-wrapper {
+    overflow: hidden;
+    margin-top: 20px;
+
+    @include mq($from: desktop){
+        margin-top: -100px;
+    }
+
+    &:nth-child(2) {
+        .rf-about__box {
+            border: 10px solid $blue;
+            padding-right: 60px;
+            width: auto;
+
+            @include mq($from: desktop){
+                width: 280px;
+                padding-right: 200px;
+            }
+
+            h1 {
+                color: $blue;
+            }
+        }
+    }
+    &:nth-child(3) {
+        .rf-about__box {
+            border: 10px solid $yellow;
+
+            h1 {
+                color: $yellow;
+            }
+        }
+    }
+    &:nth-child(4) {
+        .rf-about__box {
+            border: 10px solid $red;
+
+            @include mq($from: desktop) {
+                width: 380px;
+            }
+
+            h1 {
+                color: $red;
+            }
+        }
+    }
+}
+
+.rf-about__box {
+    padding: 20px;
+
+    @include mq($from: desktop){
+        padding: 100px;
+    }
+
+    &.right {
+        margin-left: auto;
+    }
+
+    &.left {
+        margin-right: auto;
+    }
+
+    @include mq($from: desktop) {
+        width: 600px;
+    }
+
+    h1, h2 {
+        max-width: 300px;
+        font-size: $large + 10px;
+        font-family: $rf-sans;
+        color: #333;
+
+        span {
+            display: block;
+        }
+    }
+
+    p {
+        font-size: $small;
+        font-family: $rf-sans;
+        color: #333;
+        margin-top: 10px;
+        max-width: 280px;
+    }
+
+
+}

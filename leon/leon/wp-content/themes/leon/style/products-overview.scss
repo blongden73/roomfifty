@@ -1,0 +1,112 @@
+//this file should only be used to style the desktop product overview page
+.rf-home__product-container {
+    @include mq($from: desktop) {
+        overflow: hidden;
+        padding-top: 90px;
+    }
+}
+
+.rf-home__product-wrapper.products-overview {
+    @include mq($from: desktop) {
+        width: 21.8%;
+        float: left;
+        margin-right: 1.2%;
+        margin-left: 1%;
+        height: auto;
+    }
+
+    &:nth-child(4n) {
+        @include mq($from: desktop){
+            margin-right: 0;
+        }
+    }
+
+    .rf-home__product-image {
+
+        @include mq($from: desktop) {
+            width: 100%;
+            position: relative;
+            height: auto;
+            overflow: visible;
+        }
+
+        &.rf-says {
+            @include mq($from: desktop) {
+                height: 290px;
+                overflow: hidden;
+            }
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            height: 3px;
+            background-color: $red;
+            position: absolute;
+            bottom: -3px;
+            left: -5%;
+            right: -6%;
+        }
+    }
+
+    &:hover {
+        .rf-home__explore-button {
+            background-color: $red;
+            color: white;
+            border: 1px solid $red;
+        }
+    }
+
+    .rf-home__explore-button {
+        border: 1px solid black;
+        padding: rf-spacing(1.2) rf-spacing(0.6);
+        width: max-content;
+        margin-left: rf-spacing(1);
+        margin-top: rf-spacing(1);
+        transition: all ease-in-out 0.25s;
+        font-family: $rf-sans;
+        font-size: $small;
+    }
+
+    .product-link {
+        z-index: 20;
+    }
+
+    .rf-home__price {
+        border-bottom: 1px dotted black;
+        width: 93%;
+        padding-bottom: rf-spacing(0.5);
+    }
+
+    .rf-home__product-details {
+        @include mq($from: desktop) {
+            left: 0px;
+            bottom: auto;
+            top: auto;
+            width: 100%;
+            position: relative;
+        }
+    }
+
+    &:nth-child(even) {
+        .rf-home__product-details {
+            @include mq($from: desktop) {
+                left: 0px;
+                right: auto;
+            }
+        }
+    }
+    .rf-home__product-title {
+        @include mq($from: desktop) {
+            margin-top: 0px;
+            min-height: 50px;
+            padding-top: 10px;
+        }
+    }
+}
+
+.rf-single__product-title p {
+    @include mq($from: desktop) {
+        border: none;
+    }
+}
