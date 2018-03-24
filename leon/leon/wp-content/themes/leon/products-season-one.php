@@ -24,7 +24,7 @@
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
               <?php $image = get_field('artist_main_image'); ?>
               <?php $id = get_field('artist_print_id'); ?>
-              <div class="rf-home__product-wrapper products-overview">
+              <div class="rf-home__product-wrapper products-overview rf-season-one-product">
                   <div class="rf-home__product-image">
                       <img src="<?php echo $image ?>">
                   </div>

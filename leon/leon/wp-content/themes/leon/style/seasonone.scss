@@ -63,3 +63,54 @@
         padding-top: rf-spacing(10);
     }
 }
+
+.rf-home__product-wrapper.products-overview {
+    &.rf-season-one-product {
+        margin-bottom: 60px;
+
+        .rf-home__product-image {
+            &:after {
+                background-color: $pink1;
+            }
+        }
+
+        .rf-home__product-details {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: $yellow1;
+            border-radius: 50%;
+            top: 0px;
+
+            @include mq($from: desktop) {
+                top: -34px;
+            }
+        }
+
+        .rf-home__product-title {
+            h1 {
+                font-size: 20px;
+                font-family: $rf-script;
+                position: absolute;
+                width: 66px;
+                transform: rotate(-11deg);
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 54px;
+                margin: auto;
+            }
+        }
+        &:nth-child(even) {
+            .rf-home__product-details {
+                background-color: $pink1;
+            }
+        }
+        &:nth-child(odd) {
+            .rf-home__product-details {
+                bottom: -45px;
+            }
+        }
+    }
+}
