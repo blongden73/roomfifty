@@ -120,7 +120,8 @@
               },
               "description": {
                 "font-family": "Montserrat, sans-serif",
-                "font-weight": "bold"
+                "font-weight": "bold",
+                "line-height": "18px"
               },
               "price": {
                 "font-family": "Montserrat, sans-serif",

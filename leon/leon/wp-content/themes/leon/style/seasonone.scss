@@ -105,12 +105,47 @@
         &:nth-child(even) {
             .rf-home__product-details {
                 background-color: $pink1;
+                color: #fff;
             }
         }
         &:nth-child(odd) {
             .rf-home__product-details {
                 bottom: -45px;
+                top: auto;
             }
         }
+    }
+}
+
+.rf-artists__archive {
+    .rf-single__artists-description-wrapper {
+        .rf-single__artists-name {
+            h1 {
+                font-family: $rf-script;
+                font-size: $large + 8px;
+                color: $pink1;
+            }
+        }
+        .rf-single__arists-description {
+            a {
+                color: $pink1;
+            }
+        }
+    }
+    .rf-single__arists-picture {
+
+        &:before {
+            border: 5px solid $yellow1;
+        }
+        
+        .rf-artist__picture {
+            border: 5px solid $blue1;
+        }
+    }
+}
+
+.rf-artists__archive-loop {
+    .rf-home__buy-button {
+        border-top: 3px solid $pink1;
     }
 }

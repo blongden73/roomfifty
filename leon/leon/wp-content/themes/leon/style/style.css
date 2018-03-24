@@ -2006,6 +2006,25 @@ body {
     height: 54px;
     margin: auto; }
   .rf-home__product-wrapper.products-overview.rf-season-one-product:nth-child(even) .rf-home__product-details {
-    background-color: #E1206F; }
+    background-color: #E1206F;
+    color: #fff; }
   .rf-home__product-wrapper.products-overview.rf-season-one-product:nth-child(odd) .rf-home__product-details {
-    bottom: -45px; }
+    bottom: -45px;
+    top: auto; }
+
+.rf-artists__archive .rf-single__artists-description-wrapper .rf-single__artists-name h1 {
+  font-family: "house-slant";
+  font-size: 40px;
+  color: #E1206F; }
+
+.rf-artists__archive .rf-single__artists-description-wrapper .rf-single__arists-description a {
+  color: #E1206F; }
+
+.rf-artists__archive .rf-single__arists-picture:before {
+  border: 5px solid #FFF600; }
+
+.rf-artists__archive .rf-single__arists-picture .rf-artist__picture {
+  border: 5px solid #26D4F7; }
+
+.rf-artists__archive-loop .rf-home__buy-button {
+  border-top: 3px solid #E1206F; }
