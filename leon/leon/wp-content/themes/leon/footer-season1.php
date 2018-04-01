@@ -1,14 +1,13 @@
-<div class="rf-footer">
+<div class="rf-footer rf-footer__archive">
     <div class="rf-wrapper">
         <div class="rf-footer__col">
-            <ul class="rf-page-list">
+            <ul>
                 <a href="http://roomfifty.com/contact/"><li>Contact</li></a>
                 <!-- <li>FAQ's</li> -->
                 <a href="http://roomfifty.com/returns/"><li>Returns</li></a>
                 <a href="http://roomfifty.com/deliveries/"><li>Deliveries</li></a>
                 <a href="http://roomfifty.com/framing/"><li>Framing</li></a>
                 <a href="http://roomfifty.com/about/"><li>About us</li></a>
-                <a href="http://roomfifty.com/printing/"><li>Printing</li></a>
             </ul>
             <ul>
                 <?php if( have_rows('social_media', 345) ): ?>

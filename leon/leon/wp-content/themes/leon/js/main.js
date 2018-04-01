@@ -71,10 +71,31 @@ function devMode(){
     }
 }
 
+function cookie() {
+    var lightbox = document.querySelector('.rf-lightbox');
+    if(!Cookies.get('lightbox')){
+        Cookies.set('lightbox', 'false');
+    }
+    if(Cookies.get('lightbox') === 'false') {
+        lightbox.classList.add('display');
+        Cookies.set('lightbox', 'true');
+    }
+}
+
+function closeLightbox() {
+    var lightbox = document.querySelector('.rf-lightbox');
+    var close = document.querySelector('.rf-lightbox-close');
+    close.addEventListener('click', function(){
+        lightbox.classList.remove('display');
+    });
+}
+
 function init() {
     menu();
     splash();
     spec();
     devMode();
+    cookie();
+    closeLightbox();
 }
 init();

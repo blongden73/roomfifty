@@ -5,9 +5,10 @@
  */
  ?>
 <?php get_header('season1'); ?>
-<div class="rf-overlay-season-one rf-temporary">
-    <h1>Coming soon</h1>
-</div>
+<?php
+    $archive = get_field('archive', 312);
+?>
+
 <div class="rf-season-one-top">
     <div class="rf-wrapper">
         <div class="rf-single__artists-name products rf-season-one">
@@ -20,7 +21,7 @@
 </div>
 <div class="rf-wrapper">
     <div class="rf-home__product-container">
-        <?php query_posts('cat=4'); ?>
+        <?php query_posts("cat={$archive}"); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
               <?php $image = get_field('artist_main_image'); ?>
               <?php $id = get_field('artist_print_id'); ?>
@@ -41,4 +42,4 @@
     </div>
     <?php rewind_posts(); ?>
 </div>
-<?php get_footer(); ?>
+<?php get_footer('season1'); ?>

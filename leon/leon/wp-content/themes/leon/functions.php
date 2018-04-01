@@ -1,7 +1,9 @@
 <?php
     function adds_styles_scripts_to_head() {
+    wp_register_script( 'cookie', get_template_directory_uri() . '/js/js.cookie.js?&nocache=1', '', null, 'true');
     wp_register_script( 'main', get_template_directory_uri() . '/js/main.js?&nocache=1', '', null, 'true');
     wp_register_style( 'style', get_template_directory_uri() . '/style.css?&nocache=1','','', 'all' );
+    wp_enqueue_script( 'cookie' );
     wp_enqueue_script( 'main' );
     wp_enqueue_style( 'style' );
     }

@@ -4,7 +4,7 @@
                 Make room for fifty of the finest image makers in the world
             </h1>
             <ul>
-            <?php query_posts('cat=4'); ?>
+            <?php query_posts('cat=7'); ?>
               <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                   <li>
                       <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

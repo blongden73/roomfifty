@@ -48,3 +48,52 @@
         }
     }
 }
+
+.rf-lightbox {
+    position: fixed;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 100000;
+    height: 100vh;
+    width: 100%;
+    display: none;
+
+    &.display {
+        display: block;
+    }
+
+    .rf-lightbox-inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        height: 200px;
+        background-color: $blue;
+        padding: 8px 0 8px 8px;
+        border-right: 22px solid $blue;
+
+        h1 {
+            font-size: 20px;
+            color: #ffffff;
+            font-family: $rf-sans;
+        }
+
+        svg {
+            width: 190px;
+            height: auto;
+        }
+    }
+
+    .rf-lightbox-close {
+        position: absolute;
+        top: 10px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

@@ -23,8 +23,42 @@
 }
 
 .rf-season-one-header {
+    .rf-header{
+        background-color: $yellow1;
+
+        .rf-menu {
+            ul {
+                li {
+                    color: #333;
+
+                    &:nth-child(4) {
+                        color: $pink1;
+                    }
+                }
+            }
+        }
+
+        .rf-burger {
+            .rf-burger-bar {
+                background-color: #333;
+            }
+        }
+    }
+
     .rf-logo {
         width: 112px;
+
+        svg {
+            path {
+                &:nth-child(1) {
+                    fill: #333;
+                }
+
+                &:nth-child(2) {
+                    fill: #333;
+                }
+            }
+        }
     }
 
     .rf-logo-main {
@@ -39,6 +73,7 @@
 .rf-season-one-top {
     background-color: $pink1;
     margin-bottom: rf-spacing(3);
+    padding-bottom: rf-spacing(2);
 
     @include mq($from: desktop) {
         margin-bottom: 0;
@@ -76,14 +111,16 @@
 
         .rf-home__product-details {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             background-color: $yellow1;
             border-radius: 50%;
             top: 0px;
+            left: 0px;
 
             @include mq($from: desktop) {
                 top: -34px;
+                left: -6px;
             }
         }
 
@@ -92,7 +129,7 @@
                 font-size: 20px;
                 font-family: $rf-script;
                 position: absolute;
-                width: 66px;
+                width: 96px;
                 transform: rotate(-11deg);
                 top: 0;
                 bottom: 0;
@@ -110,8 +147,13 @@
         }
         &:nth-child(odd) {
             .rf-home__product-details {
-                bottom: -45px;
-                top: auto;
+                bottom: auto;
+                top: 38px;
+
+                @include mq($from: desktop) {
+                    top: auto;
+                    bottom: -45px;
+                }
             }
         }
     }
@@ -137,7 +179,7 @@
         &:before {
             border: 5px solid $yellow1;
         }
-        
+
         .rf-artist__picture {
             border: 5px solid $blue1;
         }
@@ -148,4 +190,8 @@
     .rf-home__buy-button {
         border-top: 3px solid $pink1;
     }
+}
+
+.rf-footer.rf-footer__archive {
+    background-color: $pink1;
 }

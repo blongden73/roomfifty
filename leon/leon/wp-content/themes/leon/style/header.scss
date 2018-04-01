@@ -59,6 +59,12 @@
                 padding-left: rf-spacing(0.2);
                 padding-right: rf-spacing(0.2);
             }
+
+            &:nth-child(4) {
+                font-family: $rf-script;
+                color: $pink1;
+                font-size: $medium + 4px;
+            }
         }
     }
 }

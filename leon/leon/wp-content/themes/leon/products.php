@@ -5,7 +5,7 @@
 <div class="rf-wrapper">
     <div class="rf-single__artists-name products">
         <h1><?php the_title(); ?></h1>
-        <h2>Roomfifty Season 1</h2>
+        <h2>Roomfifty Season 2</h2>
     </div>
 </div>
 <div class="rf-wrapper">
