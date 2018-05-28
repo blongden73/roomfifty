@@ -158,15 +158,21 @@ body{
 
 //dev mode
 .rf-temporary {
-	display: none;
-	
-	&.block {
-		display: block;
-	}
-	&.none {
+	&-block {
 		display: none;
+		
+		&.block {
+			display: block;
+		}
+	}
+	&-none {
+		&.none {
+			display: none;
+		}
 	}
 }
+
+
 
 .rf-logo-secondary {
 	display: none;

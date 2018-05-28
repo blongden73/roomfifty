@@ -59,13 +59,61 @@ function spec(){
     }
 }
 
+function saleTimer() {
+    if(document.querySelector(".rf-hour")){
+        var countDownDate = new Date("Jun 7, 2018 9:00:00").getTime();
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = 24 * days + Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        console.log(hours, minutes);
+        var splitHour = hours.toString().split('');
+        var hoursLabel = 'hrs';
+
+        if(distance <= 1) {
+            hoursLabel = 'hr';
+        }
+
+        document.querySelector(".rf-hour").innerHTML = '<span class="number-one">' + splitHour[0] + '</span><span class="number-two">' + splitHour[1] + '</span> '+ hoursLabel;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.querySelector(".rf-hour").innerHTML = "0";
+        }
+    }
+}
+
+//TO DO FINISH THIS
+
+function calcSize($number1, $number2){
+    if($number1 > $number2) {
+        return $number1;
+    }else if($number2 > $number1) {
+        return $number2;
+    } else {
+        return $number1;
+    }
+}
+
 function devMode(){
     var url = window.location.href;
     console.log('is it dev mode?');
     if(url.indexOf('devMode') > 1) {
-        console.log('yes');
-        console.log(document.querySelector('.rf-temporary'));
-        document.querySelector('.rf-temporary').classList.add('block');
+        var none = document.getElementsByClassName('.rf-temporary-none');
+        var block = document.getElementsByClassName('rf-temporary-block');
+        var count = none.length + block.length;
+        var bl = block.length;
+        var nl = none.length;
+
+        for(var i = 0; i < count; i++) {
+            if(calcSize(bl, nl) < i) {
+                block[i].classList.add('block');
+                console.log(i, 'i');
+            }
+        }
+
     } else {
         console.log('no');
     }
@@ -97,5 +145,6 @@ function init() {
     devMode();
     cookie();
     closeLightbox();
+    saleTimer();
 }
 init();

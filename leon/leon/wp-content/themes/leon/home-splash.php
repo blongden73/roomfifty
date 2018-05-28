@@ -1,4 +1,4 @@
-<div class="rf-splash">
+<div class="rf-splash rf-temporary-none <?php if( get_field('big_red_button_sale', 1477) ): ?>rf-sale-hide<?php endif; ?>">
     <div class="rf-fifty-artists rf-titles">
         <?php get_template_part('fiftyartists'); ?>
     </div>
