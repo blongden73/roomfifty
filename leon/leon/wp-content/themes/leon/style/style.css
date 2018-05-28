@@ -83,8 +83,12 @@ body {
     .desktop-only {
       display: block; } }
 
-.rf-temporary.none {
+.rf-temporary {
   display: none; }
+  .rf-temporary.block {
+    display: block; }
+  .rf-temporary.none {
+    display: none; }
 
 .rf-logo-secondary {
   display: none; }
@@ -1013,7 +1017,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 200px;
+    height: 240px;
     background-color: #0792d1;
     padding: 8px 0 8px 8px;
     border-right: 22px solid #0792d1; }
@@ -1024,6 +1028,11 @@ body {
     .rf-lightbox .rf-lightbox-inner svg {
       width: 190px;
       height: auto; }
+    .rf-lightbox .rf-lightbox-inner .rf-sign-up-small {
+      font-size: 12px;
+      line-height: 14px;
+      font-family: "circular";
+      color: #fff; }
   .rf-lightbox .rf-lightbox-close {
     position: absolute;
     top: 10px;
@@ -1033,6 +1042,46 @@ body {
     .rf-lightbox .rf-lightbox-close svg {
       width: 100%;
       height: auto; }
+
+.rf-featured {
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  @media all and (min-width: 61.25em) {
+    .rf-featured {
+      padding-bottom: 60px; } }
+
+.rf-featured-title {
+  font-family: "circular";
+  font-size: 20px;
+  color: #eb5d42;
+  margin-bottom: 20px;
+  max-width: 260px; }
+
+.rf-featured-images {
+  height: 90px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px; }
+  @media all and (min-width: 61.25em) {
+    .rf-featured-images {
+      margin-right: 10px;
+      height: 110px; }
+      .rf-featured-images:nth-child(3) {
+        margin-top: 20px; }
+      .rf-featured-images:nth-child(4) {
+        margin-top: -30px; }
+      .rf-featured-images:nth-child(5) {
+        margin-top: 30px; } }
+  @media all and (min-width: 81.25em) {
+    .rf-featured-images {
+      height: 115px; }
+      .rf-featured-images:nth-child(2) {
+        margin-left: 270px; } }
+  .rf-featured-images img {
+    height: 100%;
+    width: auto;
+    display: block; }
 
 .rf-pop-menu ul {
   margin-left: 0px;
@@ -1845,6 +1894,10 @@ body {
     font-family: "circular";
     line-height: 20px;
     color: #ffffff; }
+    .rf-footer__col p.rf-sign-up-small {
+      font-size: 12px;
+      line-height: 14px;
+      margin-bottom: 10px; }
   .rf-footer__col ul {
     margin-bottom: 20px; }
     .rf-footer__col ul li {

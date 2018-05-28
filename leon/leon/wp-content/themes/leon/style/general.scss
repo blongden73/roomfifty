@@ -158,6 +158,11 @@ body{
 
 //dev mode
 .rf-temporary {
+	display: none;
+	
+	&.block {
+		display: block;
+	}
 	&.none {
 		display: none;
 	}

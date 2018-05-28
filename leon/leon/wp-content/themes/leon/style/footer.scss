@@ -30,6 +30,12 @@
         font-family: $rf-sans;
         line-height: $small + 4px;
         color: #ffffff;
+
+        &.rf-sign-up-small {
+            font-size: $tiny;
+            line-height: $tiny + 2px;
+            margin-bottom: rf-spacing(1);
+        }
     }
 
     ul {

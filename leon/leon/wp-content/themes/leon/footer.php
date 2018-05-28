@@ -7,8 +7,9 @@
                 <a href="http://roomfifty.com/returns/"><li>Returns</li></a>
                 <a href="http://roomfifty.com/deliveries/"><li>Deliveries</li></a>
                 <a href="http://roomfifty.com/framing/"><li>Framing</li></a>
-                <a href="http://roomfifty.com/about/"><li>About us</li></a>
                 <a href="http://roomfifty.com/printing/"><li>Printing</li></a>
+                <a href="http://roomfifty.com/about/"><li>About us</li></a>
+                <a href="http://roomfifty.com/privacy-policy/"><li>Privacy</li></a>
             </ul>
             <ul>
                 <?php if( have_rows('social_media', 345) ): ?>

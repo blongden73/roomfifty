@@ -67,7 +67,7 @@
         top: 50%;
         transform: translate(-50%,-50%);
         width: 300px;
-        height: 200px;
+        height: 240px;
         background-color: $blue;
         padding: 8px 0 8px 8px;
         border-right: 22px solid $blue;
@@ -81,6 +81,13 @@
         svg {
             width: 190px;
             height: auto;
+        }
+
+        .rf-sign-up-small {
+            font-size: $tiny;
+            line-height: $tiny + 2px;
+            font-family: $rf-sans;
+            color: #fff;
         }
     }
 

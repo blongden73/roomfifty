@@ -15,5 +15,7 @@
     </div>
 </form>
 </div>
-
+<p class="rf-sign-up-small">
+    *By clicking sign up you are agreeing to receive emails from RoomFifty.
+</p>
 <!--End mc_embed_signup-->

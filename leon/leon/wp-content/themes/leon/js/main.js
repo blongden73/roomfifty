@@ -65,7 +65,7 @@ function devMode(){
     if(url.indexOf('devMode') > 1) {
         console.log('yes');
         console.log(document.querySelector('.rf-temporary'));
-        document.querySelector('.rf-temporary').classList.add('none');
+        document.querySelector('.rf-temporary').classList.add('block');
     } else {
         console.log('no');
     }

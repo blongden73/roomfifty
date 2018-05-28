@@ -1,0 +1,55 @@
+.rf-featured {
+    overflow: hidden;
+    padding-top: rf-spacing(3);
+    padding-bottom: rf-spacing(3);
+
+    @include mq($from: desktop) {
+        padding-bottom: rf-spacing(6);
+    }
+}
+
+.rf-featured-title {
+    font-family: $rf-sans;
+    font-size: $medium;
+    color: $red;
+    margin-bottom: 20px;
+    max-width: 260px;
+}
+
+.rf-featured-images {
+    height: 90px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    @include mq($from: desktop) {
+        margin-right: 10px;
+        height: 110px;
+
+        &:nth-child(3) {
+            margin-top: rf-spacing(2);
+        }
+
+        &:nth-child(4) {
+            margin-top: rf-spacing(-3);
+        }
+
+        &:nth-child(5) {
+            margin-top: rf-spacing(3);
+        }
+    }
+
+    @include mq($from: wide) {
+        height: 115px;
+
+        &:nth-child(2) {
+            margin-left: rf-spacing(27);
+        }
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+        display: block;
+    }
+}
