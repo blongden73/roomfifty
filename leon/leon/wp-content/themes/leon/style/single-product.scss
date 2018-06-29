@@ -13,7 +13,7 @@
 
 .rf-single__artists-description-wrapper {
     padding-top: rf-spacing(8);
-    max-width: 340px;
+    max-width: 440px;
 
     @include mq($from: desktop) {
         float: left;

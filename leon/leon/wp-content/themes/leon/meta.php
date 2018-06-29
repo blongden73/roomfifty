@@ -21,6 +21,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?php bloginfo('template_url') ?>/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="X50A1623YhYJBCKIKFNrN8hJtl-OgbkD8MhYj66nyig" />
+    <meta name="description" content="An online shop selling prints by the best contemporary illustrators and graphic designers around the world" />
     <?php wp_head(); ?>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112214324-1"></script>

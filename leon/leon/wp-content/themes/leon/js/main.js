@@ -61,7 +61,7 @@ function spec(){
 
 function saleTimer() {
     if(document.querySelector(".rf-hour")){
-        var countDownDate = new Date("Jun 7, 2018 9:00:00").getTime();
+        var countDownDate = new Date("Jun 11, 2018 6:00:00").getTime();
         var now = new Date().getTime();
         var distance = countDownDate - now;
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -71,6 +71,10 @@ function saleTimer() {
         console.log(hours, minutes);
         var splitHour = hours.toString().split('');
         var hoursLabel = 'hrs';
+
+        if(splitHour[1] === undefined) {
+            splitHour[1] = "";
+        }
 
         if(distance <= 1) {
             hoursLabel = 'hr';
@@ -85,15 +89,17 @@ function saleTimer() {
     }
 }
 
-//TO DO FINISH THIS
+function hideEl($element){
+    for(var i = 0; i < $element.length; i++) {
+        console.log('hide', $element.length)
+        $element[i].classList.add('none');
+    }
+}
 
-function calcSize($number1, $number2){
-    if($number1 > $number2) {
-        return $number1;
-    }else if($number2 > $number1) {
-        return $number2;
-    } else {
-        return $number1;
+function showEl($element) {
+    for(var j = 0; j < $element.length; j++) {
+        console.log('show', $element.length)
+        $element[j].classList.add('block');
     }
 }
 
@@ -101,19 +107,11 @@ function devMode(){
     var url = window.location.href;
     console.log('is it dev mode?');
     if(url.indexOf('devMode') > 1) {
-        var none = document.getElementsByClassName('.rf-temporary-none');
+        console.log('yes');
+        var none = document.getElementsByClassName('rf-temporary-none');
         var block = document.getElementsByClassName('rf-temporary-block');
-        var count = none.length + block.length;
-        var bl = block.length;
-        var nl = none.length;
-
-        for(var i = 0; i < count; i++) {
-            if(calcSize(bl, nl) < i) {
-                block[i].classList.add('block');
-                console.log(i, 'i');
-            }
-        }
-
+        showEl(block);
+        hideEl(none);
     } else {
         console.log('no');
     }

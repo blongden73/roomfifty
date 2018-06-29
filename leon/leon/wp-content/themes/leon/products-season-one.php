@@ -11,12 +11,17 @@
 
 <div class="rf-season-one-top">
     <div class="rf-wrapper">
-        <div class="rf-single__artists-name products rf-season-one">
+        <div class="rf-single__artists-name products rf-season-one <?php if( get_field('big_red_button_sale', 1477) ): ?>rf-sale-hide<?php endif; ?>">
             <h1>Still 3 sizes</h1>
             <h1>Still 3 prices</h1>
             <h2>Roomfifty</h2>
             <h2>Past seasons</h2>
         </div>
+        <?php if( get_field('big_red_button_sale', 1477) ): ?>
+            <div class="rf-single__artists-name products rf-season-one rf-sale <?php if( get_field('big_red_button_sale', 1477) ): ?>rf-sale-show<?php endif; ?>">
+                <?php get_template_part('sale_type'); ?>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 <div class="rf-wrapper">

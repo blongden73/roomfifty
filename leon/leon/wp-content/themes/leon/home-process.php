@@ -1,4 +1,4 @@
-<div class="rf-wrapper">
+<div class="rf-wrapper <?php if( get_field('big_red_button_sale', 1477) ): ?>rf-sale-hide<?php endif; ?>">
     <div class="rf-process__wrapper">
         <div class="rf-process-box__wrapper">
             <div class="rf-process-box right">

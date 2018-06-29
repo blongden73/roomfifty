@@ -159,21 +159,27 @@ body{
 //dev mode
 .rf-temporary {
 	&-block {
-		display: none;
-		
+		display: none !important;
+
 		&.block {
-			display: block;
+			display: block !important;
 		}
 	}
 	&-none {
 		&.none {
-			display: none;
+			display: none !important;
 		}
 	}
 }
 
-
-
 .rf-logo-secondary {
 	display: none;
+}
+
+.rf-sale-show {
+	display: block !important;
+}
+
+.rf-sale-hide {
+	display: none !important;
 }
