@@ -31,7 +31,7 @@
                 li {
                     color: #333;
 
-                    &:nth-child(4) {
+                    &:last-child {
                         color: $pink1;
                     }
                 }

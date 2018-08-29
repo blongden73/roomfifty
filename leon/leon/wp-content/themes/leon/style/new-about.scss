@@ -1,0 +1,71 @@
+.rf-about-header__wrapper, .rf-production, .rf-framing, .rf-packaging {
+    height: 90vh;
+    width: 100%;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+
+.rf-about-header__wrapper {
+    height: 50vh;
+    margin-top: 60px;
+    @include mq($from: desktop) {
+        height: 90vh;
+        margin-top: 0;
+    }
+}
+
+.rf-people {
+    background-color: $darkBlue;
+    color: #fff;
+}
+
+.rf-about-statement {
+    color: #fff;
+    background-color: $darkBlue;
+}
+
+.rf-production__inner, .rf-framing__inner, .rf-packaging__inner {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    font-family: $rf-sans;
+
+    h1 {
+        font-size: $large;
+    }
+
+    p {
+        font-size: $large;
+    }
+}
+
+.rf-packaging__inner, .rf-framing__inner, .rf-production__inner {
+    width: 100%;
+}
+
+.rf-framing__inner-container {
+    background-color: $yellow;
+    width: 300px;
+    padding: rf-spacing(1);
+
+    .rf-production__inner & {
+        background-color: $blue;
+    }
+
+    .rf-framing__inner & {
+        background-color: $red;
+        margin-left: auto;
+    }
+}
+
+.rf-partner {
+    background-color: #333;
+    color: #fff;
+}

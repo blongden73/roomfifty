@@ -6,6 +6,14 @@
     }
 }
 
+.rf-single__artists-name.rf-old-seasons {
+    padding-top: 70px;
+}
+
+.rf-products__overview-divide {
+    background-color: #ececec;
+}
+
 .rf-home__product-wrapper.products-overview {
     @include mq($from: desktop) {
         width: 21.8%;

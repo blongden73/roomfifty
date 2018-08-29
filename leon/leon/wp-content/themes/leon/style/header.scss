@@ -46,9 +46,32 @@
             margin-right: rf-spacing(2);
             padding-bottom: rf-spacing(0.2);
             transition: all 0.2s ease-in-out;
+            position: relative;
+            opacity: 0.6;
 
             &:hover {
-                border-bottom: 3px solid $red;
+                &:before {
+                    content: '';
+                    height: 6px;
+                    background-color: #fff;
+                    display: block;
+                    position: absolute;
+                    top: -17px;
+                    width: 100%;
+                }
+            }
+
+            &.current_page_item {
+                opacity: 1;
+                &:before {
+                    content: '';
+                    height: 6px;
+                    background-color: $yellow;
+                    display: block;
+                    position: absolute;
+                    top: -17px;
+                    width: 100%;
+                }
             }
 
             a {
@@ -60,11 +83,11 @@
                 padding-right: rf-spacing(0.2);
             }
 
-            &:nth-child(4) {
-                font-family: $rf-script;
-                color: $yellow1;
-                font-size: $medium + 4px;
-            }
+            // &:last-child {
+            //     font-family: $rf-script;
+            //     color: $yellow1;
+            //     font-size: $medium + 4px;
+            // }
         }
     }
 }

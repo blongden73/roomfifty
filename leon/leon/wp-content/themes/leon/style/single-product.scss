@@ -1,3 +1,27 @@
+.rf-artists__breadcrumb-wrapper {
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    overflow: hidden;
+
+    .rf-single__artists-description-wrapper {
+        padding-top: rf-spacing(8);
+
+        .rf-single__artists-name {
+            h1 {
+                color: #333;
+                margin-bottom: 0;
+            }
+
+            h2 {
+                color: $red;
+                font-size: $tiny;
+                margin-bottom: rf-spacing(0.5);
+                margin-top: 0;
+            }
+        }
+    }
+}
+
 .rf-artists__intro-wrapper{
     background-color: #ffffff;
     padding-bottom: 20px;
@@ -6,13 +30,13 @@
     .rf-wrapper {
         @include mq($from: desktop) {
             overflow: hidden;
-            min-height: 385px;
+            min-height: 325px;
         }
     }
 }
 
 .rf-single__artists-description-wrapper {
-    padding-top: rf-spacing(8);
+    padding-top: rf-spacing(4);
     max-width: 440px;
 
     @include mq($from: desktop) {

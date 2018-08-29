@@ -1,0 +1,135 @@
+.temporaray-artists-test {
+    .rf-artist__print {
+        @include mq($from: desktop) {
+            overflow: hidden;
+        }
+    }
+    .rf-home__buy-button {
+        @include mq($from: desktop) {
+            width: 25%;
+            float: left;
+            padding-top: 0;
+        }
+    }
+
+    .rf-artist_print__custom {
+        margin-bottom: rf-spacing(4);
+        @include mq($from: desktop) {
+            overflow: hidden;
+        }
+    }
+
+    .rf-product__image--wrapper {
+        position: relative;
+
+        @include mq($from: desktop) {
+            float: left;
+            width: 74%;
+            margin-left: 1%;
+        }
+
+        .rf-buttons-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .rf-intro-cta {
+            float: left;
+            font-family:$rf-sans;
+
+            span {
+                display: inline-block;
+
+                &.button {
+                    background-color: $blue;
+                    border: 2px solid $blue;
+                    padding: rf-spacing(1);
+                    font-size: $medium;
+                    margin-right: rf-spacing(1);
+                    color: #fff;
+
+                    &:hover {
+                        background-color: $red;
+                        border: 2px solid $red;
+                    }
+
+                    &.white {
+                        display: block;
+                    }
+                    &.black {
+                        display: none;
+                    }
+                }
+            }
+
+            &.show {
+                .button.white {
+                    display: none;
+                }
+
+                .button.black {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .rf-products__images {
+        position: relative;
+
+        &.rf-white-container, &.rf-black-container {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+
+        .rf-product__image--background {
+            object-fit: contain;
+        }
+
+        .rf-product--artwork {
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &.rf-product__image-black {
+                width: 25.2vw;
+                left: 52.2vw;
+                top: 8vw;
+
+                @include mq($from: desktop) {
+                    width: 192px;
+                    left: 393px;
+                    top: 60px;
+                }
+                @include mq($from: wide) {
+                    width: 255px;
+                    left: 522px;
+                    top: 78px;
+                }
+            }
+            &.rf-product__image-white {
+                width: 30vw;
+                left: 31.6vw;
+                top: 11vw;
+
+                @include mq($from: desktop) {
+                    width: 226px;
+                    left: 239px;
+                    top: 78px;
+                }
+                @include mq($from: wide) {
+                    width: 303px;
+                    left: 313px;
+                    top: 105px;
+                }
+            }
+        }
+    }
+}

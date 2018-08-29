@@ -33,4 +33,11 @@
 
   gtag('config', 'GA_TRACKING_ID');
 </script>
+<?php if(in_category('blog')): ?>
+        <?php if( get_field('position_class_picker') == 'custom' ): ?>
+            <style>
+                <?php the_field('custom_css') ?>
+            </style>
+        <?php endif; ?>
+<?php endif; ?>
 <body class="rf-body">

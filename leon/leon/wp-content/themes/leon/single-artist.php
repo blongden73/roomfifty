@@ -1,3 +1,16 @@
+<div class="rf-artists__breadcrumb-wrapper">
+    <div class="rf-wrapper">
+        <div class="rf-single__artists-description-wrapper">
+            <div class="rf-single__artists-name">
+                <h2>Shop > Artist ></h2>
+                <h1><?php the_title(); ?></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rf-wrapper js-set-height">
+    <?php get_template_part('artists-loop') ?>
+</div>
 <div class="rf-artists__intro-wrapper">
     <div class="rf-wrapper">
         <div class="rf-single__arists-picture">
@@ -19,7 +32,4 @@
             </div>
         </div>
     </div>
-</div>
-<div class="rf-wrapper js-set-height">
-    <?php get_template_part('artists-loop') ?>
 </div>

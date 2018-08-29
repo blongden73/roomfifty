@@ -4,7 +4,9 @@ $medium: 20px;
 $large: 32px;
 $massive : 50px;
 $rf-sans: 'circular';
+$rf-serif: Georgia,Times,Times New Roman,serif;
 $rf-script: 'house-slant';
+$rf-cond: 'druk';
 
 @import url("https://use.typekit.net/hhz8got.css");
 
@@ -18,5 +20,12 @@ $rf-script: 'house-slant';
          url('style/fonts/lineto-circular-pro-bold.svg#acronymregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'druk';
+    src: url('style/fonts/DrukCond-Super.woff2') format('woff2'),
+        url('style/fonts/DrukCond-Super.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
 }

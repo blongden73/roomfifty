@@ -1,40 +1,43 @@
 function splash(){
-    var splashImage = document.getElementsByClassName('rf-splash__wrapper');
-    var splashTitle = document.getElementsByClassName('rf-titles');
-    if(splashImage.length >= 1) {
-        var count = splashImage.length;
+    if(document.querySelector(".rf-splash__wrapper")){
+        var splashImage = document.getElementsByClassName('rf-splash__wrapper');
+        var splashTitle = document.getElementsByClassName('rf-titles');
+        if(splashImage.length >= 1) {
+            var count = splashImage.length;
 
-        function getRandomInt(min, max) {
-          min = Math.ceil(min);
-          max = Math.floor(max);
-          return Math.floor(Math.random() * (max - min)) + min;
+            function getRandomInt(min, max) {
+              min = Math.ceil(min);
+              max = Math.floor(max);
+              return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            splashImage[0].classList.add('show');
+            splashTitle[0].classList.add('show');
+            splashCarousel();
         }
-
-        splashImage[0].classList.add('show');
-        splashTitle[0].classList.add('show');
-        splashCarousel();
     }
 }
 
 function splashCarousel(){
-    var titleset = document.getElementsByClassName('rf-titles');
-    var imageset = document.getElementsByClassName('rf-splash__wrapper');
+    if(document.querySelector(".rf-splash__wrapper")){
+        var titleset = document.getElementsByClassName('rf-titles');
+        var imageset = document.getElementsByClassName('rf-splash__wrapper');
 
-    setInterval(function(){
-          var a = document.querySelector('.rf-titles.show');
-          var n = document.querySelector('.rf-titles.show + .rf-titles');
-          var b = document.querySelector('.rf-splash__wrapper.show');
-          var c = document.querySelector('.rf-splash__wrapper.show + .rf-splash__wrapper');
-          if(!n || !c){
-            var n = titleset[0];
-            var c = imageset[0];
-          }
-          a.classList.remove('show');
-          n.classList.add('show');
-          b.classList.remove('show');
-          c.classList.add('show');
-    }, 1500)
-
+        setInterval(function(){
+              var a = document.querySelector('.rf-titles.show');
+              var n = document.querySelector('.rf-titles.show + .rf-titles');
+              var b = document.querySelector('.rf-splash__wrapper.show');
+              var c = document.querySelector('.rf-splash__wrapper.show + .rf-splash__wrapper');
+              if(!n || !c){
+                var n = titleset[0];
+                var c = imageset[0];
+              }
+              a.classList.remove('show');
+              n.classList.add('show');
+              b.classList.remove('show');
+              c.classList.add('show');
+        }, 2000)
+    }
 }
 
 function menu() {
@@ -119,21 +122,144 @@ function devMode(){
 
 function cookie() {
     var lightbox = document.querySelector('.rf-lightbox');
-    if(!Cookies.get('lightbox')){
-        Cookies.set('lightbox', 'false');
-    }
-    if(Cookies.get('lightbox') === 'false') {
-        lightbox.classList.add('display');
-        Cookies.set('lightbox', 'true');
+    if(document.querySelector('.rf-lightbox')){
+        if(!Cookies.get('lightbox')){
+            Cookies.set('lightbox', 'false');
+        }
+        if(Cookies.get('lightbox') === 'false') {
+            lightbox.classList.add('display');
+            Cookies.set('lightbox', 'true');
+        }
     }
 }
 
 function closeLightbox() {
     var lightbox = document.querySelector('.rf-lightbox');
     var close = document.querySelector('.rf-lightbox-close');
-    close.addEventListener('click', function(){
-        lightbox.classList.remove('display');
-    });
+    if(document.querySelector(".rf-lightbox")){
+        close.addEventListener('click', function(){
+            lightbox.classList.remove('display');
+        });
+    }
+}
+
+function loadMore() {
+    if(document.querySelector(".rf-new-shop__wrapper")){
+        var newShop = document.getElementsByClassName('rf-new-shop__wrapper');
+        var loadButton = document.querySelector('.rf-load-more');
+        var images = document.getElementsByClassName('rf-new-shop__src');
+        var productsTally = document.querySelector('.rf-shop-amount-update');
+        var pagination = document.querySelector('.rf-pagination-update');
+        //amount of pages
+        var m = 12;
+        //proxy for index
+        var x = 1;
+        //amount of products
+        var l = newShop.length / m;
+        //target
+        var tar = l*x;
+        //load initail products
+        function showImagesLoad(){
+            for(var i = 0; i < m; i++){
+                newShop[i].classList.add('display');
+                var data = images[i].dataset.src;
+                images[i].setAttribute('src', data);
+                productsTally.innerHTML = m + ' prints';
+                pagination.innerHTML = x + '/12';
+            }
+            x++;
+        };
+        showImagesLoad();
+        function showImagesClick(){
+            loadButton.addEventListener('click', function(){
+                tar = l*x;
+                for(var i = 0; i < tar; i++){
+                    newShop[i].classList.add('display');
+                    var data = images[i].dataset.src;
+                    images[i].setAttribute('src', data);
+                    productsTally.innerHTML = tar + ' prints';
+                    pagination.innerHTML = x + '/12';
+                }
+                x++;
+            });
+        };
+        showImagesClick();
+    }
+}
+
+function tags() {
+    var selector = document.getElementsByClassName('selector');
+    var s = document.querySelectorAll('.selector');
+    var product = document.getElementsByClassName('rf-new-shop__wrapper');
+    var image = document.getElementsByClassName('rf-new-shop__src');
+    var productsTally = document.querySelector('.rf-shop-amount-update');
+    var pageTitle = document.querySelector('.rf-shop-title-update');
+    var isHomePage = document.querySelector('.rf-splash__wrapper');
+    var showing;
+    if(window.location.href.indexOf('?') > 1) {
+        var split = window.location.href.split('?');
+        for(var j = 0; j < product.length; j++){
+            var tags = product[j].dataset.tags;
+            var cleanTags = tags.replace('  ', ' ').toLowerCase();
+            product[j].classList.remove('display');
+            if(cleanTags.includes(split[1])){
+                product[j].classList.add('display');
+                var src = image[j].dataset.src;
+                image[j].setAttribute('src',src);
+            }
+        }
+        pageTitle.innerHTML = split[1];
+        showing = document.querySelectorAll('.rf-new-shop__wrapper.display').length;
+        productsTally.innerHTML = showing + ' prints';
+    }
+    if(pageTitle){
+        for(var i = 0; i < selector.length; i++){
+            selector[i].addEventListener('click', function(){
+                var selectorTag = this.getAttribute('data-click').toLowerCase();
+                s.forEach(function(el){
+                    el.classList.remove('display');
+                });
+                this.classList.add('display');
+                for(var j = 0; j < product.length; j++){
+                    var tags = product[j].dataset.tags;
+                    var cleanTags = tags.replace('  ', ' ').toLowerCase();
+                    product[j].classList.remove('display');
+                    if(cleanTags.includes(selectorTag)){
+                        product[j].classList.add('display');
+                        var src = image[j].dataset.src;
+                        image[j].setAttribute('src',src);
+                    }
+                }
+                pageTitle.innerHTML = selectorTag;
+                window.scrollTo(0, 0);
+                showing = document.querySelectorAll('.rf-new-shop__wrapper.display').length;
+                productsTally.innerHTML = showing + ' prints';
+            });
+        }
+    }else if(isHomePage){
+        console.log('home');
+        for(var i = 0; i < selector.length; i++) {
+            selector[i].addEventListener('click', function(){
+                var selectorTag = this.getAttribute('data-click').toLowerCase();
+                console.log(selectorTag);
+                window.location.href = 'https://roomfifty.com/shop/' + '?' + selectorTag;
+            });
+        }
+    }
+}
+
+function mobileTags() {
+    if(document.querySelector('.rf-new-shop__filter')){
+        var tagTitle = document.querySelectorAll('.rf-new-shop__filter > div > h1');
+        var tags = document.querySelectorAll('.rf-new-shop__filter > div');
+        console.log(tags);
+        console.log(tagTitle);
+        for(var i=0; i < tagTitle.length; i++){
+            tagTitle[i].addEventListener('click', function(){
+                this.classList.toggle('clicked');
+            });
+        }
+    }
 }
 
 function init() {
@@ -144,5 +270,8 @@ function init() {
     cookie();
     closeLightbox();
     saleTimer();
+    loadMore();
+    tags();
+    mobileTags();
 }
 init();

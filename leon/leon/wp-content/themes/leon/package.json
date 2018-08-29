@@ -11,9 +11,14 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0"
+  },
+  "dependencies": {
+    "json-concat": "0.0.1",
+    "shopify-node-api": "^1.8.0"
   }
 }

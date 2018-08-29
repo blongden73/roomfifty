@@ -15,7 +15,7 @@
         array(
           'site-menu' => __( 'Site Menu' ),
           'product-menu' => __( 'Product Menu' ),
-          'rf-says-menu' => __( 'Soda Says Menu' )
+          'secondary-menu' => __( 'Secondary Menu' )
         )
       );
     }

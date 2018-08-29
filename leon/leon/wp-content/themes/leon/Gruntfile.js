@@ -43,11 +43,29 @@ module.exports = function(grunt) {
              src: 'style.css',
              dest: 'build',
        },
+       static: {
+             expand: true,
+             cwd: 'static',
+             src: 'allproducts.php',
+             dest: 'build',
+       },
        deploy: {
              expand: true,
              cwd: 'build',
              src: 'style.css',
              dest: '',
+        }
+    },
+
+    'compile-handlebars': {
+        allStatic: {
+            files: [{
+              src: 'fixtures/template.handlebars',
+              dest: 'static/allproducts.php'
+            }],
+            preHTML: 'fixtures/header.html',
+            postHTML: 'fixtures/footer.html',
+            templateData: 'data/allRoomfifty.json'
         }
     },
 
@@ -61,6 +79,8 @@ module.exports = function(grunt) {
           }
         }
     },
+
+    clean: ['static'],
 
     watch: {
 			css: {
@@ -76,7 +96,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-sftp-deploy');
+  grunt.loadNpmTasks('grunt-compile-handlebars');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.registerTask('default', ['sass', 'watch']);
   grunt.registerTask('compile', ['uglify', 'copy', 'postcss']);
-  grunt.registerTask('deploy', ['compile','sftp-deploy']);
+  grunt.registerTask('make', ['clean', 'compile-handlebars', 'copy']);
+  grunt.registerTask('deploy', ['make','compile','sftp-deploy']);
 };

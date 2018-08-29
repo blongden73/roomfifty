@@ -136,6 +136,10 @@ body{
 	}
 }
 
+@mixin borderTop($color){
+	border-top: 3px solid $color;
+}
+
 @function rf-spacing($multiplier) {
 	@return 10px * $multiplier
 };
