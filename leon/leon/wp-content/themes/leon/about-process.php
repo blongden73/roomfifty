@@ -11,12 +11,12 @@
         </div>
     </div>
     <div class="rf-framing">
-        <img class="rf-process-image" src="https://roomfifty.com/wp-content/uploads/2018/08/roomfiftywebsite_framing.jpg">
+        <img class="rf-process-image" src="https://roomfifty.com/wp-content/uploads/2018/08/roomfiftywebsite_framing_grey.jpg">
             <div class="rf-framing__inner">
                 <div class="rf-wrapper">
                     <div class="rf-framing__inner-container">
                         <h1>Framing</h1>
-                        <p><?php the_field('framing', 314)?></p>
+                        <p><?php the_field('frames', 314)?></p>
                     </div>
                 </div>
             </div>

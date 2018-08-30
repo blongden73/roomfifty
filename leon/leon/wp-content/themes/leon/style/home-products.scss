@@ -116,7 +116,7 @@
 
 .rf-home__product-image {
     width: 100%;
-    height: 100vw;
+    height: 93vw;
     position: absolute;
     transition: all 0.2s ease-in-out;
 
@@ -128,11 +128,14 @@
 
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
         margin-bottom: -3px;
-        // object-fit: cover;
+        object-fit: cover;
         // display: block;
         transition: all 0.2s ease-in-out;
+        mix-blend-mode: multiply;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
     }
 
     .products-overview & {
@@ -183,7 +186,7 @@
 
     .products-overview & {
         position: relative;
-        margin-top: rf-spacing(-4);
+        margin-top: rf-spacing(2);
         width: 100%;
 
         @include mq($from: desktop) {

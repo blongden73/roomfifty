@@ -13,7 +13,7 @@
     <div class="rf-home__product-container">
         <?php query_posts("cat={$season}"); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <?php $image = get_field('artist_main_image'); ?>
+              <?php $image = get_field('artist_image'); ?>
               <?php $id = get_field('artist_print_id'); ?>
               <div class="rf-home__product-wrapper products-overview">
                   <div class="rf-home__product-image">
@@ -43,7 +43,7 @@
     <div class="rf-home__product-container">
         <?php query_posts("cat={$archive}"); ?>
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-              <?php $image = get_field('artist_main_image'); ?>
+              <?php $image = get_field('artist_image'); ?>
               <?php $id = get_field('artist_print_id'); ?>
               <div class="rf-home__product-wrapper products-overview">
                   <div class="rf-home__product-image">

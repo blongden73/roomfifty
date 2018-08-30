@@ -8,6 +8,7 @@
 
 .rf-single__artists-name.rf-old-seasons {
     padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .rf-products__overview-divide {
@@ -15,6 +16,8 @@
 }
 
 .rf-home__product-wrapper.products-overview {
+    position: relative;
+
     @include mq($from: desktop) {
         width: 21.8%;
         float: left;
@@ -29,13 +32,58 @@
         }
     }
 
+    &:nth-child(odd) {
+        .rf-home__product-image {
+            background-color: $blue;
+        }
+    }
+
+    &:nth-child(3n) {
+        .rf-home__product-image {
+            background-color: $yellow;
+        }
+    }
+
+    &:before {
+        position: absolute;
+        left: -14px;
+        top: 0;
+        bottom: -30px;
+        width: 1px;
+        background-color: #d8d8d8;
+        content: '';
+        display: none;
+
+        @include mq($from: desktop) {
+            display: block;
+        }
+    }
+
+    &.journal-overview {
+        .rf-home__product-image {
+            border-radius: 0;
+
+            img {
+                mix-blend-mode: normal;
+                filter:none;
+                -webkit-filter:none;
+            }
+        }
+    }
+
     .rf-home__product-image {
+        border-radius: 50%;
+        background-color: $red;
+        overflow: hidden;
 
         @include mq($from: desktop) {
             width: 100%;
             position: relative;
-            height: auto;
-            overflow: visible;
+            height: 16.5vw;
+        }
+
+        @include mq($from: wide) {
+            height: 19vw;
         }
 
         &.rf-says {
@@ -43,17 +91,6 @@
                 height: 290px;
                 overflow: hidden;
             }
-        }
-
-        &:after {
-            content: '';
-            display: block;
-            height: 3px;
-            background-color: $red;
-            position: absolute;
-            bottom: -3px;
-            left: -5%;
-            right: -6%;
         }
     }
 

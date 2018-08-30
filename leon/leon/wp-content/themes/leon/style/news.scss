@@ -117,10 +117,12 @@
 
     b {
         color: $blue;
+        font-family: $rf-sans;
     }
 
     strong {
         color: $blue;
+        font-family: $rf-sans;
     }
 }
 .rf-red {
@@ -132,10 +134,12 @@
 
     b {
         color: $red;
+        font-family: $rf-sans;
     }
 
     strong {
         color: $red;
+        font-family: $rf-sans;
     }
 }
 .rf-yellow {
@@ -147,10 +151,12 @@
 
     b {
         color: $yellow;
+        font-family: $rf-sans;
     }
 
     strong {
         color: $yellow;
+        font-family: $rf-sans;
     }
 }
 
@@ -339,6 +345,7 @@
     }
 
     p {
+        font-family: $rf-sans-book;
         margin-bottom: 10px;
         color: #333;
 

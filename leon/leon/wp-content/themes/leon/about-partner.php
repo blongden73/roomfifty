@@ -2,7 +2,7 @@
     <div class="rf-wrapper">
         <div class="rf-columns">
             <div class="rf-col">
-                <h1>Our partner</h1>
+                <h1>We are</h1>
             </div>
             <div class="rf-col">
                 <h2>Affordable</h2>

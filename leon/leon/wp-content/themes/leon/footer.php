@@ -29,7 +29,7 @@
         </div>
     </div>
 </div>
-<?php get_template_part('shopify-script') ?>
+<?php get_template_part('shopify-script-tests') ?>
 <?php wp_footer(); ?>
 </body>
 

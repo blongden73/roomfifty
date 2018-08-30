@@ -11,6 +11,37 @@
     }
 }
 
+.rf-framing {
+    background-color: #ececec;
+
+    img {
+        @include mq($from: desktop) {
+            width: 74%;
+        }
+        @include mq($from: wide) {
+            width: 68%;
+        }
+    }
+}
+
+.rf-packaging {
+    img {
+        @include mq($from: desktop) {
+            object-position: 0px -115px;
+        }
+    }
+}
+
+.rf-production {
+    img {
+        @include mq($from: wide) {
+            object-position: 0px -52px;
+        }
+        @include mq($from: wide) {
+            object-position: 0px -332px;
+        }
+    }
+}
 
 .rf-about-header__wrapper {
     height: 50vh;
@@ -19,16 +50,44 @@
         height: 90vh;
         margin-top: 0;
     }
+
+    img {
+        @include mq($from: desktop) {
+            object-position: top;
+        }
+        @include mq($from: wide) {
+            object-position: 0 -57px;
+        }
+    }
 }
 
 .rf-people {
     background-color: $darkBlue;
     color: #fff;
+
+    .rf-col {
+        img {
+            border-radius: 50%;
+            padding-left: 10px;
+        }
+    }
+
+    .rf-col {
+        h1 {
+            padding-left: 10px;
+        }
+    }
 }
 
 .rf-about-statement {
     color: #fff;
     background-color: $darkBlue;
+
+    .rf-col {
+        h1, h2 {
+            padding-left: 10px;
+        }
+    }
 }
 
 .rf-production__inner, .rf-framing__inner, .rf-packaging__inner {
@@ -42,7 +101,13 @@
     }
 
     p {
-        font-size: $large;
+        font-size: $small + 2px;
+        font-family: $rf-sans-book;
+
+        @include mq($from: desktop) {
+            font-size: $medium;
+            line-height: $medium + 4px;
+        }
     }
 }
 
@@ -68,4 +133,10 @@
 .rf-partner {
     background-color: #333;
     color: #fff;
+
+    .rf-col {
+        h1, h2, p {
+            padding-left: 10px;
+        }
+    }
 }

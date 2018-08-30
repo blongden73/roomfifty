@@ -17,6 +17,19 @@
 .rf-single-blog__article {
     margin-top: rf-spacing(1);
 
+    &:before {
+        @include mq($from: desktop) {
+            position: absolute;
+            top: -14px;
+            bottom: -60px;
+            left: 114px;
+            background-color: #D7D8D9;
+            width: 1px;
+            content: '';
+            display: block;
+        }
+    }
+
     .rf-single-blog__drop-icon {
         display: inline-block;
         height: rf-spacing(8);
@@ -67,9 +80,11 @@
         padding-right: 2px;
         position: relative;
         z-index: 2;
-    }
 
-    @include highlighter('a', 18px, -1);
+        &:hover {
+            border-bottom: 2px solid $red;
+        }
+    }
 
     blockquote {
         p {
