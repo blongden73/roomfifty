@@ -3087,25 +3087,33 @@ body {
   .temporaray-artists-test .rf-artist__print {
     overflow: hidden; } }
 
-@media all and (min-width: 61.25em) {
-  .temporaray-artists-test .rf-home__buy-button {
-    width: 25%;
-    float: left;
-    padding-top: 0; } }
+.temporaray-artists-test .rf-home__buy-button {
+  order: 2; }
+  @media all and (min-width: 61.25em) {
+    .temporaray-artists-test .rf-home__buy-button {
+      width: 25%;
+      padding-top: 0;
+      order: 1; } }
 
 .temporaray-artists-test .rf-artist_print__custom {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column; }
   @media all and (min-width: 61.25em) {
     .temporaray-artists-test .rf-artist_print__custom {
-      overflow: hidden; } }
+      overflow: hidden;
+      flex-direction: row; } }
 
 .temporaray-artists-test .rf-product__image--wrapper {
-  position: relative; }
+  position: relative;
+  order: 1;
+  flex-basis: 100%; }
   @media all and (min-width: 61.25em) {
     .temporaray-artists-test .rf-product__image--wrapper {
-      float: left;
       width: 74%;
-      margin-left: 1%; } }
+      margin-left: 1%;
+      flex-basis: 74%;
+      order: 2; } }
   .temporaray-artists-test .rf-product__image--wrapper .rf-buttons-wrapper {
     position: absolute;
     top: 0;

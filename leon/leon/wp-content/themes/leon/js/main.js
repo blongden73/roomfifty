@@ -202,7 +202,7 @@ function tags() {
             var tags = product[j].dataset.tags;
             var cleanTags = tags.replace('  ', ' ').toLowerCase();
             product[j].classList.remove('display');
-            if(cleanTags.includes(split[1])){
+            if(cleanTags.includes(split[1].replace('-', ' '))){
                 product[j].classList.add('display');
                 var src = image[j].dataset.src;
                 image[j].setAttribute('src',src);
@@ -240,7 +240,7 @@ function tags() {
         console.log('home');
         for(var i = 0; i < selector.length; i++) {
             selector[i].addEventListener('click', function(){
-                var selectorTag = this.getAttribute('data-click').toLowerCase();
+                var selectorTag = this.getAttribute('data-click').toLowerCase().replace(' ', '-');
                 console.log(selectorTag);
                 window.location.href = 'https://roomfifty.com/shop/' + '?' + selectorTag;
             });
