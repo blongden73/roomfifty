@@ -19,6 +19,9 @@ var path3 = "data/roomfifty-page-3.json";
 var path4 = "data/roomfifty-page-4.json";
 var path5 = "data/roomfifty-page-5.json";
 var path6 = "data/roomfifty-page-6.json";
+var path7 = "data/roomfifty-page-7.json";
+var path8 = "data/roomfifty-page-8.json";
+var path9 = "data/roomfifty-page-9.json";
 
 Shopify.get('/admin/products.json?page=1', function(err, data, headers){
   console.log(data.products); // Data contains product json information
@@ -93,6 +96,48 @@ Shopify.get('/admin/products.json?page=6', function(err, data, headers){
   // var replace = json.replace('[', '').replace(/]$/,"");
 
   fs.writeFile(path6, json, function(error) {
+       if (error) {
+         console.error("write error:  " + error.message);
+       } else {
+         console.log("Successful Write to " + path6);
+       }
+  });
+});
+
+Shopify.get('/admin/products.json?page=7', function(err, data, headers){
+  console.log(data.products); // Data contains product json information
+  var json = JSON.stringify(data.products);
+  // var replace = json.replace('[', '').replace(/]$/,"");
+
+  fs.writeFile(path7, json, function(error) {
+       if (error) {
+         console.error("write error:  " + error.message);
+       } else {
+         console.log("Successful Write to " + path6);
+       }
+  });
+});
+
+Shopify.get('/admin/products.json?page=8', function(err, data, headers){
+  console.log(data.products); // Data contains product json information
+  var json = JSON.stringify(data.products);
+  // var replace = json.replace('[', '').replace(/]$/,"");
+
+  fs.writeFile(path8, json, function(error) {
+       if (error) {
+         console.error("write error:  " + error.message);
+       } else {
+         console.log("Successful Write to " + path6);
+       }
+  });
+});
+
+Shopify.get('/admin/products.json?page=9', function(err, data, headers){
+  console.log(data.products); // Data contains product json information
+  var json = JSON.stringify(data.products);
+  // var replace = json.replace('[', '').replace(/]$/,"");
+
+  fs.writeFile(path9, json, function(error) {
        if (error) {
          console.error("write error:  " + error.message);
        } else {

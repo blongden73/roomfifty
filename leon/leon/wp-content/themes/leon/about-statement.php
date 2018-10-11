@@ -5,7 +5,7 @@
                 <h1>About Roomfifty</h1>
             </div>
             <div class="rf-col rf-col-4">
-                <h2><?php the_field('about_statement', 314) ?><h2>
+                <h2><?php the_field('about_statement', 314) ?></h2>
             </div>
         </div>
     </div>

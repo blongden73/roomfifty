@@ -69,6 +69,10 @@
                 -webkit-filter:none;
             }
         }
+
+        &:before {
+            left: -8px;
+        }
     }
 
     .rf-home__product-image {

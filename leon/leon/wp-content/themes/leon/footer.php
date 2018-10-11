@@ -2,14 +2,15 @@
     <div class="rf-wrapper">
         <div class="rf-footer__col">
             <ul class="rf-page-list">
-                <a href="http://roomfifty.com/contact/"><li>Contact</li></a>
+                <!-- <a href="http://roomfifty.com/contact/"><li>Contact</li></a> -->
                 <!-- <li>FAQ's</li> -->
-                <a href="http://roomfifty.com/returns/"><li>Returns</li></a>
+                <!-- <a href="http://roomfifty.com/returns/"><li>Returns</li></a>
                 <a href="http://roomfifty.com/deliveries/"><li>Deliveries</li></a>
                 <a href="http://roomfifty.com/framing/"><li>Framing</li></a>
                 <a href="http://roomfifty.com/printing/"><li>Printing</li></a>
                 <a href="http://roomfifty.com/about/"><li>About us</li></a>
-                <a href="http://roomfifty.com/privacy-policy/"><li>Privacy</li></a>
+                <a href="http://roomfifty.com/privacy-policy/"><li>Privacy</li></a> -->
+                <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
             </ul>
             <ul>
                 <?php if( have_rows('social_media', 345) ): ?>
@@ -17,6 +18,19 @@
                         <a href="<?php the_sub_field('link'); ?>"><?php the_sub_field('image'); ?></a>
                     <?php endwhile; ?>
                 <?php endif; ?>
+            </ul>
+        </div>
+        <div class="rf-footer__col">
+            <ul class="rf-page-list">
+                <!-- <a href="http://roomfifty.com/contact/"><li>Contact</li></a> -->
+                <!-- <li>FAQ's</li> -->
+                <!-- <a href="http://roomfifty.com/returns/"><li>Returns</li></a>
+                <a href="http://roomfifty.com/deliveries/"><li>Deliveries</li></a>
+                <a href="http://roomfifty.com/framing/"><li>Framing</li></a>
+                <a href="http://roomfifty.com/printing/"><li>Printing</li></a>
+                <a href="http://roomfifty.com/about/"><li>About us</li></a>
+                <a href="http://roomfifty.com/privacy-policy/"><li>Privacy</li></a> -->
+                <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
             </ul>
         </div>
         <div class="rf-footer__col rf-newsletter">

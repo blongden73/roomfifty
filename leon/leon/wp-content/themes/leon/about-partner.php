@@ -10,7 +10,7 @@
             </div>
             <div class="rf-col">
                 <h2>Unique</h2>
-                <p>All of our prints are exclusive to RoomFifty and created by 50 of the most exciting, award-winning illustrators and designers working today.</p>
+                <p>Our prints are all exclusive to RoomFifty and created by 50 of the most exciting artists working today.</p>
             </div>
             <div class="rf-col">
                 <h2>High-quality</h2>

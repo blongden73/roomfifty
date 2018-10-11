@@ -1,7 +1,26 @@
+function elementInViewport(el) {
+  var top = el.offsetTop;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while(el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top >= window.pageYOffset &&
+    left >= window.pageXOffset &&
+    (top + height) <= (window.pageYOffset + window.innerHeight) &&
+    (left + width) <= (window.pageXOffset + window.innerWidth)
+  );
+}
+
 function splash(){
     if(document.querySelector(".rf-splash__wrapper")){
         var splashImage = document.getElementsByClassName('rf-splash__wrapper');
-        var splashTitle = document.getElementsByClassName('rf-titles');
         if(splashImage.length >= 1) {
             var count = splashImage.length;
 
@@ -10,10 +29,8 @@ function splash(){
               max = Math.floor(max);
               return Math.floor(Math.random() * (max - min)) + min;
             }
-
-            splashImage[0].classList.add('show');
-            splashTitle[0].classList.add('show');
-            splashCarousel();
+            console.log('new carousel');
+            splashImage[getRandomInt(0, count)].classList.add('show');
         }
     }
 }
@@ -36,7 +53,7 @@ function splashCarousel(){
               n.classList.add('show');
               b.classList.remove('show');
               c.classList.add('show');
-        }, 2000)
+        }, 3000)
     }
 }
 
@@ -150,6 +167,7 @@ function loadMore() {
         var images = document.getElementsByClassName('rf-new-shop__src');
         var productsTally = document.querySelector('.rf-shop-amount-update');
         var pagination = document.querySelector('.rf-pagination-update');
+        var resetButton = document.querySelector('.rf-reset-button');
         //amount of pages
         var m = 12;
         //proxy for index
@@ -177,13 +195,28 @@ function loadMore() {
                     newShop[i].classList.add('display');
                     var data = images[i].dataset.src;
                     images[i].setAttribute('src', data);
-                    productsTally.innerHTML = tar + ' prints';
+                    productsTally.innerHTML = Math.ceil(tar) + ' prints';
                     pagination.innerHTML = x + '/12';
                 }
                 x++;
             });
         };
         showImagesClick();
+        function reset() {
+            m = 12;
+            x = 1;
+            var selected = document.querySelector('.selector.display');
+            var shopTitle = document.querySelector('.rf-shop-title-update');
+            selected.classList.remove('display');
+            for(i = 0; i < newShop.length; i++) {
+                newShop[i].classList.remove('display');
+            }
+            showImagesLoad();
+            shopTitle.innerHTML = "all products";
+        };
+        resetButton.addEventListener('click', function(){
+            reset();
+        });
     }
 }
 
@@ -196,19 +229,19 @@ function tags() {
     var pageTitle = document.querySelector('.rf-shop-title-update');
     var isHomePage = document.querySelector('.rf-splash__wrapper');
     var showing;
-    if(window.location.href.indexOf('?') > 1) {
+    if(window.location.href.indexOf('?') > 1 && pageTitle) {
         var split = window.location.href.split('?');
         for(var j = 0; j < product.length; j++){
             var tags = product[j].dataset.tags;
             var cleanTags = tags.replace('  ', ' ').toLowerCase();
             product[j].classList.remove('display');
-            if(cleanTags.includes(split[1].replace('-', ' '))){
+            if(cleanTags.includes(split[1].replace(/-/g, ' '))){
                 product[j].classList.add('display');
                 var src = image[j].dataset.src;
                 image[j].setAttribute('src',src);
             }
         }
-        pageTitle.innerHTML = split[1];
+        pageTitle.innerHTML = split[1].replace(/-/g, ' ');
         showing = document.querySelectorAll('.rf-new-shop__wrapper.display').length;
         productsTally.innerHTML = showing + ' prints';
     }
@@ -237,10 +270,10 @@ function tags() {
             });
         }
     }else if(isHomePage){
-        console.log('home');
+        console.log('home 4');
         for(var i = 0; i < selector.length; i++) {
             selector[i].addEventListener('click', function(){
-                var selectorTag = this.getAttribute('data-click').toLowerCase().replace(' ', '-');
+                var selectorTag = this.getAttribute('data-click').toLowerCase().replace(/ /g, '-');
                 console.log(selectorTag);
                 window.location.href = 'https://roomfifty.com/shop/' + '?' + selectorTag;
             });
@@ -256,9 +289,28 @@ function mobileTags() {
         console.log(tagTitle);
         for(var i=0; i < tagTitle.length; i++){
             tagTitle[i].addEventListener('click', function(){
+                for(var i=0; i < tagTitle.length; i++) {
+                    tagTitle[i].classList.remove('clicked');
+                }
                 this.classList.toggle('clicked');
             });
         }
+    }
+}
+
+function artistOverview() {
+    var artist = document.querySelectorAll('.rf-home__products-image-src');
+    if(artist) {
+        document.addEventListener('scroll', function(){
+            console.log('scrolling');
+            for(var i=0; i < artist.length; i++) {
+                console.log(artist[i]);
+                if(elementInViewport(artist[i])) {
+                    var src = artist[i].dataset.src;
+                    artist[i].setAttribute('src', src);
+                }
+            }
+        });
     }
 }
 
@@ -273,5 +325,6 @@ function init() {
     loadMore();
     tags();
     mobileTags();
+    artistOverview();
 }
 init();

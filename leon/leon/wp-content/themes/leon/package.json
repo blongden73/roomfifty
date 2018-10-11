@@ -10,15 +10,29 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "compress-images": "^1.4.2",
+    "grunt": "^1.0.3",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0"
   },
   "dependencies": {
+    "autoprefixer": "^9.1.5",
+    "cssnano": "^4.1.4",
+    "grunt-compile-handlebars": "^2.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-sftp-deploy": "^0.2.5",
+    "image-download": "^1.1.0",
+    "image-downloader": "^3.4.1",
+    "imagemin": "^6.0.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^6.0.0",
     "json-concat": "0.0.1",
+    "merge-json": "0.1.0-b.3",
+    "pixrem": "^4.0.1",
+    "scrape": "^0.2.3",
     "shopify-node-api": "^1.8.0"
   }
 }

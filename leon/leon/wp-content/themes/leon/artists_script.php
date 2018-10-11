@@ -18,7 +18,7 @@ function loadJSON(path, success, error) {
     xhr.send();
 }
 
-loadJSON("https://roomfifty.com/wp-content/themes/leon/allRoomfifty.json", function(data) {
+loadJSON("https://roomfifty.com/wp-content/themes/leon/110818.json", function(data) {
     Handlebars.registerHelper("image", function(find) {
        var findItem = find;
        for(var i=0; i < data.products.length; i++) {
@@ -42,15 +42,28 @@ loadJSON("https://roomfifty.com/wp-content/themes/leon/allRoomfifty.json", funct
     }
 
     function printGallery() {
-        console.log('print-page')
+        console.log('print-page 5')
         var isPrintPage = document.querySelector('.rf-artist_print__custom');
         var buttons = document.querySelectorAll('.rf-intro-cta');
         var images = document.querySelectorAll('.rf-products__images');
         var black = document.querySelectorAll('.rf-black-container');
+        var artwork = document.getElementsByClassName('rf-product--artwork');
         console.log(buttons);
         console.log(images);
 
         if(isPrintPage) {
+            setTimeout(function(){
+                for(var j=0; j < artwork.length; j ++) {
+                    var height = artwork[j].offsetHeight;
+                    var width = artwork[j].offsetWidth;
+                    if(width > height){
+                        console.log(artwork[j].parentElement);
+                        var parent = artwork[j].parentElement;
+                        console.log(parent.parentElement);
+                        parent.parentElement.classList.add('landscape');
+                    }
+                }
+            }, 1000);
             for(var k=0; k< black.length; k++) {
                 black[k].classList.add('show');
             }

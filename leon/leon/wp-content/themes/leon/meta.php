@@ -25,13 +25,13 @@
     <meta name="description" content="An online shop selling prints by the best contemporary illustrators and graphic designers around the world" />
     <?php wp_head(); ?>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112214324-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126416675-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'GA_TRACKING_ID');
+  gtag('config', 'UA-126416675-1');
 </script>
 <?php if(in_category('blog')): ?>
         <?php if( get_field('position_class_picker') == 'custom' ): ?>

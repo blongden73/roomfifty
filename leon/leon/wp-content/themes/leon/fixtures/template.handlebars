@@ -37,11 +37,14 @@
                 <li class="selector size-picker-list" data-click="A1">A1</li> -->
             </ul>
         </div>
+        <div class="rf-reset">
+            <div class="rf-reset-button">Reset filters</div>
+        </div>
     </div>
     <div class="rf-new-shop">
         <h1 class="rf-shop-title-update">All products</h1>
         <p>Showing <span class="rf-shop-amount-update"></span></p>
-        <ul>
+        <ul class="rf-shop-container">
             {{#products}}
                 <li class="rf-new-shop__wrapper" data-tags="{{excludeURL tags}}">
                     <a href="{{findURL tags title}}?{{id}}"></a>

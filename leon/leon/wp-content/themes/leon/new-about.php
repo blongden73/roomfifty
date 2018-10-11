@@ -10,4 +10,5 @@
 <?php get_template_part('about-people')?>
 <?php get_template_part('about-process')?>
 <?php get_template_part('about-partner')?>
+<?php get_template_part('home-statement'); ?>
 <?php get_footer(); ?>

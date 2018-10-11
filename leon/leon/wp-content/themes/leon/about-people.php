@@ -13,7 +13,7 @@
                             <img src="<?php echo $image ?>">
                         <?php endif; ?>
                         <?php if( $name ): ?>
-                            <h1><?php echo $name ?></h1>
+                            <h2><?php echo $name ?></h2>
                         <?php endif; ?>
                         <?php if( $description ): ?>
                             <p><?php echo $description ?></p>
