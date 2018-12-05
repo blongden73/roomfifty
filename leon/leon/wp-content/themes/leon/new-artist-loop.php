@@ -2,7 +2,7 @@
     <?php
     // check for rows (parent repeater)
     if( have_rows('prints') ): ?>
-        <div class="rf-artist__print">
+        <div id="post-<?php the_ID(); ?>" class="rf-artist__print">
         <?php
         // loop through rows (parent repeater)
         while( have_rows('prints') ): the_row(); ?>
@@ -22,13 +22,13 @@
                         </div>
                     </div>
                     <div class="rf-products__images rf-black-container">
-                        <img class="rf-product__image--background rf-product__image-black-background landscape" src="https://roomfifty.com/wp-content/uploads/2018/09/landscape_artists_black.jpg">
-                        <img class="rf-product__image--background rf-product__image-black-background portrait" src="https://roomfifty.com/wp-content/uploads/2018/09/A2black.jpg">
+                        <img class="rf-product__image--background rf-product__image-black-background landscape" src="https://roomfifty.com/wp-content/uploads/2018/10/landscape_artists_black.jpg">
+                        <img class="rf-product__image--background rf-product__image-black-background portrait" src="https://roomfifty.com/wp-content/uploads/2018/10/A2black.jpg">
                         <img class="rf-product--artwork rf-product__image-black" src="{{image <?php echo $BuyId ?>}}">
                     </div>
                     <div class="rf-products__images rf-white-container">
-                        <img class="rf-product__image--background rf-product__image-white-background landscape" src="https://roomfifty.com/wp-content/uploads/2018/09/landscape_artists_white.jpg">
-                        <img class="rf-product__image--background rf-product__image-white-background portrait" src="https://roomfifty.com/wp-content/uploads/2018/09/A2White.jpg">
+                        <img class="rf-product__image--background rf-product__image-white-background landscape" src="https://roomfifty.com/wp-content/uploads/2018/10/landscape_artists_white.jpg">
+                        <img class="rf-product__image--background rf-product__image-white-background portrait" src="https://roomfifty.com/wp-content/uploads/2018/10/A2White.jpg">
                         <img class="rf-product--artwork rf-product__image-white" src="{{image <?php echo $BuyId ?>}}">
                     </div>
                 </script>

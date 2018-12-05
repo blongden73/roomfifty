@@ -244,6 +244,19 @@
     }
 }
 
+.rf-columns-container.rf-testimonials {
+    background-color: $yellow;
+
+    .rf-col {
+        border-top: 1px solid #121212;
+
+        @include mq($from: desktop) {
+            border-top: none;
+            border-left: 1px solid #121212;
+        }
+    }
+}
+
 .rf-popular-container, .rf-theme-container {
     background-color: #ECEBE8;
 }
@@ -270,4 +283,57 @@
 
 .rf-season-container {
     background-color: #f6f6f6;
+}
+
+.rf-gift-card-wrapper {
+    background-color: #f15e47;
+    background-image: url('https://roomfifty.com/wp-content/uploads/2018/11/gift-cards-2.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 104%;
+    min-height: 270px;
+    background-position: bottom right;
+
+    @include mq($from: tablet) {
+        background-size: 54%;
+    }
+
+    @include mq($from: desktop) {
+        background-size: contain;
+        background-position: right;
+        min-height: auto;
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .rf-col {
+        @include mq($until: desktop) {
+            border-top: none;
+        }
+
+        h1, p {
+            color: #fff;
+        }
+
+        p {
+            span.button {
+                background-color: $yellow;
+                padding-left: 7px;
+                padding-top: 6px;
+                padding-right: 7px;
+                padding-bottom: 6px;
+                font-family: 'circular';
+                margin-top: 6px;
+                color: #121212;
+                display: inline-block;
+            }
+        }
+    }
 }

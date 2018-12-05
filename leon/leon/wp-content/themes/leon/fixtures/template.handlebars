@@ -46,7 +46,7 @@
         <p>Showing <span class="rf-shop-amount-update"></span></p>
         <ul class="rf-shop-container">
             {{#products}}
-                <li class="rf-new-shop__wrapper" data-tags="{{excludeURL tags}}">
+                <li class="rf-new-shop__wrapper {{gift tags}}" data-tags="{{excludeURL tags}}">
                     <a href="{{findURL tags title}}?{{id}}"></a>
                     <div class="rf-new-shop__image">{{#image}}<img class="rf-new-shop__src" data-src="{{src}}">{{/image}}</div>
                     <div class="rf-new-shop__title"><span class="rf-print-title">{{splitTitle title 0}}</span> <span class="rf-print-artist">{{splitTitle title 1}}</span></div>

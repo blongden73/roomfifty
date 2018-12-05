@@ -3,6 +3,7 @@
 <?php get_template_part('home-values'); ?>
 <?php get_template_part('home-popular'); ?>
 <?php get_template_part('home-latest'); ?>
+<?php get_template_part('home-promo'); ?>
 <?php get_template_part('themes'); ?>
 <?php get_template_part('home-featured'); ?>
 <?php get_footer(); ?>

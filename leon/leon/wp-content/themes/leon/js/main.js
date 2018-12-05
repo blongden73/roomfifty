@@ -196,7 +196,9 @@ function loadMore() {
                     var data = images[i].dataset.src;
                     images[i].setAttribute('src', data);
                     productsTally.innerHTML = Math.ceil(tar) + ' prints';
-                    pagination.innerHTML = x + '/12';
+                    if(x <= m) {
+                        pagination.innerHTML = x + '/12';
+                    }
                 }
                 x++;
             });
@@ -228,6 +230,7 @@ function tags() {
     var productsTally = document.querySelector('.rf-shop-amount-update');
     var pageTitle = document.querySelector('.rf-shop-title-update');
     var isHomePage = document.querySelector('.rf-splash__wrapper');
+    var pagination = document.querySelector('.rf-pagination-update');
     var showing;
     if(window.location.href.indexOf('?') > 1 && pageTitle) {
         var split = window.location.href.split('?');
@@ -267,6 +270,7 @@ function tags() {
                 window.scrollTo(0, 0);
                 showing = document.querySelectorAll('.rf-new-shop__wrapper.display').length;
                 productsTally.innerHTML = showing + ' prints';
+                pagination.innerHTML = '';
             });
         }
     }else if(isHomePage){

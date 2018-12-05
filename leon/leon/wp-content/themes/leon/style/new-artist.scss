@@ -1,3 +1,30 @@
+//GIFT CARD
+
+#post-971 {
+    .rf-black-container {
+        display: none !important;
+    }
+    .rf-white-container {
+        display: none !important;
+    }
+    .rf-buttons-wrapper {
+        display: none !important;
+    }
+
+    .rf-product__image--wrapper {
+        background-image: url('https://roomfifty.com/wp-content/uploads/2018/11/card3.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        min-height: 270px;
+
+        @include mq($from: desktop) {
+            min-height: 600px;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}
+
 .temporaray-artists-test {
     .rf-artist__print {
         @include mq($from: desktop) {
@@ -23,10 +50,26 @@
         }
     }
 
+    @keyframes fadeInProd {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
     .rf-product__image--wrapper {
         position: relative;
         order: 1;
         flex-basis: 100%;
+        opacity: 0;
+        animation-name: fadeInProd;
+        animation-duration: 1s;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
 
         @include mq($from: desktop) {
             width: 74%;

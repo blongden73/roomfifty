@@ -2843,7 +2843,7 @@ body {
       animation-delay: 0.5s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1; }
-    .rf-new-shop__wrapper.display.gift-card, .rf-new-shop__wrapper.display.tote-bag {
+    .rf-new-shop__wrapper.display.gift, .rf-new-shop__wrapper.display.tote {
       display: none !important; }
   .rf-new-shop__wrapper a {
     position: absolute;
@@ -3079,6 +3079,15 @@ body {
     .rf-columns-container h1, .rf-columns-container h2, .rf-columns-container p, .rf-columns-container li, .rf-popular-container h1, .rf-popular-container h2, .rf-popular-container p, .rf-popular-container li, .rf-season-container h1, .rf-season-container h2, .rf-season-container p, .rf-season-container li, .rf-theme-container h1, .rf-theme-container h2, .rf-theme-container p, .rf-theme-container li {
       padding-left: 10px; } }
 
+.rf-columns-container.rf-testimonials {
+  background-color: #fdd72b; }
+  .rf-columns-container.rf-testimonials .rf-col {
+    border-top: 1px solid #121212; }
+    @media all and (min-width: 61.25em) {
+      .rf-columns-container.rf-testimonials .rf-col {
+        border-top: none;
+        border-left: 1px solid #121212; } }
+
 .rf-popular-container, .rf-theme-container {
   background-color: #ECEBE8; }
 
@@ -3092,6 +3101,65 @@ body {
 
 .rf-season-container {
   background-color: #f6f6f6; }
+
+.rf-gift-card-wrapper {
+  background-color: #f15e47;
+  background-image: url("https://roomfifty.com/wp-content/uploads/2018/11/gift-cards-2.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 104%;
+  min-height: 270px;
+  background-position: bottom right; }
+  @media all and (min-width: 46.25em) {
+    .rf-gift-card-wrapper {
+      background-size: 54%; } }
+  @media all and (min-width: 61.25em) {
+    .rf-gift-card-wrapper {
+      background-size: contain;
+      background-position: right;
+      min-height: auto; } }
+  .rf-gift-card-wrapper a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100; }
+  @media all and (max-width: 61.24em) {
+    .rf-gift-card-wrapper .rf-col {
+      border-top: none; } }
+  .rf-gift-card-wrapper .rf-col h1, .rf-gift-card-wrapper .rf-col p {
+    color: #fff; }
+  .rf-gift-card-wrapper .rf-col p span.button {
+    background-color: #fdd72b;
+    padding-left: 7px;
+    padding-top: 6px;
+    padding-right: 7px;
+    padding-bottom: 6px;
+    font-family: 'circular';
+    margin-top: 6px;
+    color: #121212;
+    display: inline-block; }
+
+#post-971 .rf-black-container {
+  display: none !important; }
+
+#post-971 .rf-white-container {
+  display: none !important; }
+
+#post-971 .rf-buttons-wrapper {
+  display: none !important; }
+
+#post-971 .rf-product__image--wrapper {
+  background-image: url("https://roomfifty.com/wp-content/uploads/2018/11/card3.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 270px; }
+  @media all and (min-width: 61.25em) {
+    #post-971 .rf-product__image--wrapper {
+      min-height: 600px;
+      background-position: center;
+      background-size: cover; } }
 
 @media all and (min-width: 61.25em) {
   .temporaray-artists-test .rf-artist__print {
@@ -3114,10 +3182,22 @@ body {
       overflow: hidden;
       flex-direction: row; } }
 
+@keyframes fadeInProd {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .temporaray-artists-test .rf-product__image--wrapper {
   position: relative;
   order: 1;
-  flex-basis: 100%; }
+  flex-basis: 100%;
+  opacity: 0;
+  animation-name: fadeInProd;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1; }
   @media all and (min-width: 61.25em) {
     .temporaray-artists-test .rf-product__image--wrapper {
       width: 74%;

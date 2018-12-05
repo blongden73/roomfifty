@@ -1,3 +1,4 @@
+<?php get_template_part('testimonials'); ?>
 <div class="rf-footer">
     <div class="rf-wrapper">
         <div class="rf-footer__col">

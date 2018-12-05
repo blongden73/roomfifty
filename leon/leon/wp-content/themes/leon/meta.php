@@ -2,6 +2,7 @@
 <html style="margin-top: 0px !important;">
 <head>
     <title><?php bloginfo('title'); ?></title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="p:domain_verify" content="64614c386606400cace2d74066e9ff26"/>
     <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_url') ?>/favicon/apple-icon-57x57.png">
@@ -24,6 +25,13 @@
     <meta name="google-site-verification" content="X50A1623YhYJBCKIKFNrN8hJtl-OgbkD8MhYj66nyig" />
     <meta name="description" content="An online shop selling prints by the best contemporary illustrators and graphic designers around the world" />
     <?php wp_head(); ?>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K6NDN95');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126416675-1"></script>
 <script>
@@ -41,3 +49,7 @@
         <?php endif; ?>
 <?php endif; ?>
 <body class="rf-body">
+<!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6NDN95"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->

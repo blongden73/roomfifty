@@ -6,7 +6,7 @@
             </div>
             <div class="rf-col">
                 <h2>Affordable</h2>
-                <p>Limited edition, museum-standard prints starting at just £20.</p>
+                <p>Museum-standard prints starting at just £20.</p>
             </div>
             <div class="rf-col">
                 <h2>Unique</h2>
@@ -14,7 +14,7 @@
             </div>
             <div class="rf-col">
                 <h2>High-quality</h2>
-                <p>Printed on 240gsm archival-standard paper, we use professional, fade-resistant inks to create beautiful prints with incredibly fine detail.</p>
+                <p>Printed on premium, heavyweight art paper, we use professional, fade-resistant inks to create beautiful prints with incredibly fine detail.</p>
             </div>
             <div class="rf-col">
                 <h2>Ethical</h2>
