@@ -2,7 +2,7 @@
 .rf-home__product-container {
     @include mq($from: desktop) {
         overflow: hidden;
-        padding-top: 90px;
+        padding-top: 20px;
     }
 }
 
@@ -19,14 +19,14 @@
     position: relative;
 
     @include mq($from: desktop) {
-        width: 21.8%;
+        width: 19%;
         float: left;
         margin-right: 1.2%;
         margin-left: 1%;
         height: auto;
     }
 
-    &:nth-child(4n) {
+    &:nth-child(5n) {
         @include mq($from: desktop){
             margin-right: 0;
         }

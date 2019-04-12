@@ -37,6 +37,17 @@
         }
     }
 
+    .roomfifty-strap {
+      font-size: $medium;
+      line-height: $medium;
+      width: 60%;
+      margin-bottom: rf-spacing(3);
+
+      @include mq($from: desktop) {
+        width: 95%;
+      }
+    }
+
     ul {
         margin-bottom: 20px;
 
@@ -195,7 +206,7 @@
         border-radius: 0 !important;
         color: #333 !important;
         font-family: $rf-sans !important;
-        width: 100% !important;
+        width: 90% !important;
     }
 
     input.button {

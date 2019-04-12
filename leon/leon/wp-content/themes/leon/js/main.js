@@ -168,36 +168,57 @@ function loadMore() {
         var productsTally = document.querySelector('.rf-shop-amount-update');
         var pagination = document.querySelector('.rf-pagination-update');
         var resetButton = document.querySelector('.rf-reset-button');
-        //amount of pages
-        var m = 12;
+        if(document.querySelector(".rf-special-product-wrapper")) {
+          //amount of pages
+          var m = 2;
+        } else {
+          //amount of pages
+          var m = 13;
+        }
         //proxy for index
         var x = 1;
         //amount of products
         var l = newShop.length / m;
         //target
-        var tar = l*x;
+        var tar = Math.round(l)*x;
         //load initail products
         function showImagesLoad(){
+          if(document.querySelector(".rf-special-product-wrapper")) {
+            for(var i = 0; i < l; i++){
+                newShop[i].classList.add('display');
+                var data = images[i].dataset.src;
+                images[i].setAttribute('src', data);
+                productsTally.innerHTML = l + ' prints';
+                pagination.innerHTML = x + '/' + m;
+            }
+            x++;
+          } else {
             for(var i = 0; i < m; i++){
                 newShop[i].classList.add('display');
                 var data = images[i].dataset.src;
                 images[i].setAttribute('src', data);
                 productsTally.innerHTML = m + ' prints';
-                pagination.innerHTML = x + '/12';
+                pagination.innerHTML = x + '/' + m;
             }
             x++;
+          }
         };
         showImagesLoad();
         function showImagesClick(){
             loadButton.addEventListener('click', function(){
-                tar = l*x;
+                tar = Math.round(l)*x;
                 for(var i = 0; i < tar; i++){
                     newShop[i].classList.add('display');
-                    var data = images[i].dataset.src;
-                    images[i].setAttribute('src', data);
+                      var imageWrapper = newShop[i].querySelector('.rf-new-shop__image');
+                      var imageInner = imageWrapper.querySelector('.rf-new-shop__src');
+                      if(imageInner != null || imageInner != undefined) {
+                        console.log(tar, i);
+                        var imageData = imageInner.dataset.src;
+                        imageInner.setAttribute('src', imageData);
+                      }
                     productsTally.innerHTML = Math.ceil(tar) + ' prints';
-                    if(x <= m) {
-                        pagination.innerHTML = x + '/12';
+                    if((x - 1) <= m) {
+                        pagination.innerHTML = x + '/' + m;
                     }
                 }
                 x++;
@@ -205,7 +226,13 @@ function loadMore() {
         };
         showImagesClick();
         function reset() {
-            m = 12;
+            if(document.querySelector(".rf-special-product-wrapper")) {
+              //amount of pages
+              var m = 2;
+            } else {
+              //amount of pages
+              var m = 13;
+            }
             x = 1;
             var selected = document.querySelector('.selector.display');
             var shopTitle = document.querySelector('.rf-shop-title-update');
@@ -262,8 +289,11 @@ function tags() {
                     product[j].classList.remove('display');
                     if(cleanTags.includes(selectorTag)){
                         product[j].classList.add('display');
-                        var src = image[j].dataset.src;
-                        image[j].setAttribute('src',src);
+                        var imageWrapper = product[j].querySelector('.rf-new-shop__image');
+                        var imageInner = imageWrapper.querySelector('.rf-new-shop__src');
+                        var imageData = imageInner.dataset.src;
+                        imageInner.setAttribute('src', imageData);
+                        console.log(cleanTags.includes(selectorTag), j, imageData);
                     }
                 }
                 pageTitle.innerHTML = selectorTag;
@@ -318,6 +348,14 @@ function artistOverview() {
     }
 }
 
+function checkSpecial(){
+  if(window.location.href.indexOf('print-item') > 1 && window.location.href.indexOf('special') < 1){
+    console.log('finding promo');
+    var specialPromo = document.querySelector('.rf-new-product-promotion');
+    specialPromo.classList.add('hide');
+  }
+}
+
 function init() {
     menu();
     splash();
@@ -330,5 +368,6 @@ function init() {
     tags();
     mobileTags();
     artistOverview();
+    checkSpecial();
 }
 init();

@@ -10,10 +10,11 @@
             		$image = get_sub_field('print_image');
             		$title = get_sub_field('print_title');
             		$artist = get_sub_field('print_artist');
-                    $link = get_sub_field('print_link');
+                $id = get_sub_field('id');
+                $link = get_sub_field('print_link');
             		?>
                     <div class="rf-col">
-                        <a href="<?php echo $link ?>"></a>
+                      <a href="/print-item?<?php echo $id ?>?img=<?php echo $image ?>?<?php echo $id ?>?title=<?php echo $title ?>?artist=<?php echo $artist ?>"></a>
                         <div class="rf-home-image-wrapper">
                             <img class="rf-image-flat" src="<?php echo $image ?>">
                             <!-- <img class="rf-image-hover" src="https://roomfifty.com/wp-content/uploads/2018/08/image_background_context.jpg"> -->

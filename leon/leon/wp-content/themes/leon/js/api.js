@@ -22,6 +22,9 @@ var path6 = "data/roomfifty-page-6.json";
 var path7 = "data/roomfifty-page-7.json";
 var path8 = "data/roomfifty-page-8.json";
 var path9 = "data/roomfifty-page-9.json";
+var path10 = "data/roomfifty-page-10.json";
+var path11 = "data/roomfifty-page-11.json";
+
 
 Shopify.get('/admin/products.json?page=1', function(err, data, headers){
   console.log(data.products); // Data contains product json information
@@ -138,6 +141,34 @@ Shopify.get('/admin/products.json?page=9', function(err, data, headers){
   // var replace = json.replace('[', '').replace(/]$/,"");
 
   fs.writeFile(path9, json, function(error) {
+       if (error) {
+         console.error("write error:  " + error.message);
+       } else {
+         console.log("Successful Write to " + path6);
+       }
+  });
+});
+
+Shopify.get('/admin/products.json?page=10', function(err, data, headers){
+  console.log(data.products); // Data contains product json information
+  var json = JSON.stringify(data.products);
+  // var replace = json.replace('[', '').replace(/]$/,"");
+
+  fs.writeFile(path10, json, function(error) {
+       if (error) {
+         console.error("write error:  " + error.message);
+       } else {
+         console.log("Successful Write to " + path6);
+       }
+  });
+});
+
+Shopify.get('/admin/products.json?page=11', function(err, data, headers){
+  console.log(data.products); // Data contains product json information
+  var json = JSON.stringify(data.products);
+  // var replace = json.replace('[', '').replace(/]$/,"");
+
+  fs.writeFile(path11, json, function(error) {
        if (error) {
          console.error("write error:  " + error.message);
        } else {

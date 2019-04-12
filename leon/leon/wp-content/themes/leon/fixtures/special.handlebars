@@ -1,0 +1,38 @@
+<?php
+/**
+ * Template Name: Special
+ *
+ */
+ ?>
+<?php get_header(); ?>
+<div class="rf-new-shop rf-special-product-wrapper">
+    <?php get_template_part('special_promotion') ?>
+    <div class="rf-wrapper rf-new-shop__container">
+        <h1 class="rf-shop-title-update">All prints</h1>
+        <p>Showing <span class="rf-shop-amount-update"></span></p>
+    </div>
+        <ul class="rf-shop-container">
+            {{#IWDEach products}}
+                <li class="rf-new-shop__wrapper {{gift tags}} {{IWD tags}} {{sale tags}}" data-tags="{{excludeURL tags}}">
+                  <div class="rf-wrapper rf-new-shop__container">
+                    <a href="/print-item?{{id}}?img={{#image}}{{src}}{{/image}}?title={{splitTitle title 0}}?artist={{splitTitle title 1}}?special"></a>
+                    <div class="rf-new-shop__image">{{#image}}<img class="rf-new-shop__src" data-src="{{src}}">{{/image}}</div>
+                    <div class="rf-new-shop__title">
+                      <span class="rf-print-title">{{splitTitle title 1}}</span> <span class="rf-print-artist">{{splitTitle title 0}}</span>
+                      <div class="rf-new-shop__price">{{#with variants.[0]}}<span>from</span>£{{price}}{{/with}}</div>
+                      <div class="rf-new-shop__description">
+                        {{{body_html}}}
+                      </div>
+                    </div>
+                  </div>
+                </li>
+            {{/IWDEach}}
+        </ul>
+    </div>
+</div>
+<div class="rf-wrapper">
+    <div class="rf-new-shop__loader">
+        <span class="rf-load-more">Load More</span> <span class="rf-pagination-update"></span>
+    </div>
+</div>
+<?php get_template_part('themes') ?>

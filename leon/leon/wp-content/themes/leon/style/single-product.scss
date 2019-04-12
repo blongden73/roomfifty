@@ -26,6 +26,7 @@
     background-color: #ffffff;
     padding-bottom: 20px;
     overflow: hidden;
+    padding-top: rf-spacing(8);
 
     .rf-wrapper {
         @include mq($from: desktop) {
@@ -37,7 +38,7 @@
 
 .rf-single__artists-description-wrapper {
     padding-top: rf-spacing(4);
-    max-width: 440px;
+    max-width: 600px;
 
     @include mq($from: desktop) {
         float: left;
@@ -126,7 +127,7 @@
 
         @include mq($from:desktop) {
             padding-top: 130px;
-            margin-bottom: 0px;
+            margin-bottom: 60px;
         }
 
         h1, h2 {
@@ -136,8 +137,13 @@
 }
 
 .rf-single__arists-description {
+  font-family: $rf-sans;
+  font-size: $medium;
+  line-height: $medium + 4px;
+
     p {
-        font-size: $small;
+        font-size: $medium;
+        line-height: $medium + 4px;
         color: #333;
         font-family: $rf-sans;
         margin-bottom: rf-spacing(1);

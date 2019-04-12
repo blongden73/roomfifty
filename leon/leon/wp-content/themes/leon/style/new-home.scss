@@ -244,6 +244,23 @@
     }
 }
 
+.rf-artists-page-container {
+  padding-top: 90px;
+  background-color: $yellow !important;
+
+  .rf-col {
+    border-color: #121212;
+  }
+
+  .rf-columns {
+    flex-direction: column;
+
+    @include mq($from: desktop) {
+      flex-direction: row;
+    }
+  }
+}
+
 .rf-columns-container.rf-testimonials {
     background-color: $yellow;
 
@@ -254,7 +271,42 @@
             border-top: none;
             border-left: 1px solid #121212;
         }
+
+        a {
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0,0,0,0.5);
+            display: inline;
+            transition: border 0.5s ease-in-out;
+
+            &:hover {
+                border-bottom: 1px solid rgba(0,0,0,1);
+            }
+        }
     }
+}
+
+.rf-columns-container.rf-promotion {
+  background-color: $pink1;
+
+  .rf-col {
+    color: #fff;
+
+    a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      display: inline;
+      transition: border 0.5s ease-in-out;
+      color: $yellow1;
+
+      &:hover {
+          border-bottom: 1px solid rgba(255,255,255,1);
+      }
+    }
+  }
 }
 
 .rf-popular-container, .rf-theme-container {
@@ -285,7 +337,7 @@
     background-color: #f6f6f6;
 }
 
-.rf-gift-card-wrapper {
+.rf-gift-card-wrapper, .rf-email-wrapper {
     background-color: #f15e47;
     background-image: url('https://roomfifty.com/wp-content/uploads/2018/11/gift-cards-2.jpg');
     background-repeat: no-repeat;
@@ -336,4 +388,42 @@
             }
         }
     }
+}
+
+.rf-email-wrapper {
+  background: none;
+  background-color: $yellow;
+
+  #mc_embed_signup {
+    @include mq($from: desktop) {
+      padding-left: rf-spacing(1);
+    }
+
+    #mc_embed_signup_scroll label {
+      color: $red !important;
+      display: none !important;
+    }
+
+    #mc-embedded-subscribe {
+      background-color: $red !important;
+      color: #fff !important;
+    }
+  }
+
+  .rf-columns {
+    flex-direction: column;
+    @include mq($from: desktop) {
+      flex-direction: row;
+    }
+  }
+
+  .rf-col {
+    border-color: #000;
+
+    h1, p {
+      color: #000;
+    }
+  }
+
+
 }

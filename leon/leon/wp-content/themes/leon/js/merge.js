@@ -10,6 +10,9 @@ var page6 = require('../data/roomfifty-page-6.json');
 var page7 = require('../data/roomfifty-page-7.json');
 var page8 = require('../data/roomfifty-page-8.json');
 var page9 = require('../data/roomfifty-page-9.json');
+var page10 = require('../data/roomfifty-page-10.json');
+var page11 = require('../data/roomfifty-page-11.json');
+
 
 var all = 'data/allroomfifty.json';
 
@@ -22,12 +25,15 @@ var result5 = mergeJSON.merge(result4, page6);
 var result6 = mergeJSON.merge(result5, page7);
 var result7 = mergeJSON.merge(result6, page8);
 var result8 = mergeJSON.merge(result7, page9);
+var result9 = mergeJSON.merge(result8, page10);
+var result10 = mergeJSON.merge(result9, page11);
+
 
 
 //save the result
 var rs = JSON.stringify(result8);
 var wrap = '{"products":' + rs + '}';
-console.log(result8.length);
+console.log(result9.length);
 
 //write to master file
 fs.writeFile(all, wrap, function(error) {

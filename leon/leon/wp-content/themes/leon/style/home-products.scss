@@ -165,23 +165,13 @@
 }
 
 .rf-home__product-details {
-    position: absolute;
     bottom: 0px;
     width: 100%;
     z-index: 10;
+    border-top: 4px solid #121212;
 
     .js-home-product & {
             opacity: 0;
-    }
-
-    @include mq($from: desktop) {
-        width: 300px;
-        left: 60px;
-    }
-
-    @include mq($from: wide) {
-        width: 300px;
-        left: 330px;
     }
 
     .products-overview & {
@@ -200,7 +190,7 @@
         font-size: $medium + 3px;
         font-family: $rf-sans;
         margin-bottom: rf-spacing(1.5);
-        text-align: center;
+        text-align: left;
     }
 
     &.home {

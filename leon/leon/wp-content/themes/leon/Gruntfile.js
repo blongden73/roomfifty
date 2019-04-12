@@ -46,7 +46,7 @@ module.exports = function(grunt) {
        static: {
              expand: true,
              cwd: 'static',
-             src: 'allproducts.php',
+             src: '**/*.php',
              dest: 'build',
        },
        deploy: {
@@ -58,14 +58,13 @@ module.exports = function(grunt) {
     },
 
     'compile-handlebars': {
-        allStatic: {
-            files: [{
-              src: 'fixtures/template.handlebars',
-              dest: 'static/allproducts.php'
-            }],
-            preHTML: 'fixtures/header.html',
-            postHTML: 'fixtures/footer.html',
-            templateData: 'data/allRoomfifty.json'
+        anyArray: {
+          files: [{
+            src: ['fixtures/template.handlebars', 'fixtures/sale.handlebars', 'fixtures/special.handlebars', 'fixtures/product.handlebars'],
+            dest: ['static/allproducts.php', 'static/sale.php', 'static/special.php', 'static/product.php']
+          }],
+          postHTML: 'fixtures/footer.html',
+          templateData: 'data/allRoomfifty.json'
         }
     },
 

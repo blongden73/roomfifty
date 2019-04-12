@@ -1,6 +1,6 @@
 .rf-header {
     .rf-thrifty {
-        width: 114px;
+        width: 100px;
     }
 }
 
@@ -29,6 +29,28 @@
         right: rf-spacing(16);
         display: block;
     }
+}
+
+.rf-sale-strap {
+  height: 300px;
+  width: 100%;
+  background-color: $pink1;
+  position: relative;
+  margin-bottom: rf-spacing(1);
+
+  svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; /* Need a specific value to work */
+    height: 300px;
+
+    @include mq($from: desktop) {
+      width: 70%;
+    }
+  }
 }
 
 .rf-sale-headline {

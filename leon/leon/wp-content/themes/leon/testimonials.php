@@ -6,7 +6,7 @@
             </div>
             <div class="rf-col">
                 <p>RoomFifty finally offers something that is completely different and unique when it comes to art.  I love their concept of less artists and more originality!</p>
-                <h2>Lisa Dawson</h2>
+                <h2><a href="http://lisadawsonstyling.com">Lisa Dawson</a></h2>
             </div>
             <div class="rf-col">
                 <p>Room Fifty is my first (and last!) stop when it comes to picking up prints for my home or as a gift. The site has a fantastic range of artists and high quality prints at affordable prices.</p>

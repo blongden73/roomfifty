@@ -25,6 +25,16 @@
     }
 }
 
+//new artist page
+
+.rf-product__image--background {
+  display: none;
+
+  &.display {
+    display: block;
+  }
+}
+
 .temporaray-artists-test {
     .rf-artist__print {
         @include mq($from: desktop) {

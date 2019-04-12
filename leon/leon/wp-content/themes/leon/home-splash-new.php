@@ -18,7 +18,7 @@
                 <h1><?php the_field('home_intro', 1589)?></h1>
                 <p><?php the_field('home_description', 1589)?></p>
                 <div class="rf-intro-cta">
-                    <a href="https://roomfifty.com/shop"><span class="button">Shop for art</span></a>
+                    <a href="https://roomfifty.com/shop/?season-4"><span class="button">Shop for art</span></a>
                 </div>
                 <div class="rf-intro-cta secondary">
                     <a href="https://roomfifty.com/about"><span class="button">How it works</span></a>
